@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="JOB_HISTORY" directorySegmentName="seg_0" id="4A28B976-B10D-79A4-0652-69AD2DDE6AEB">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+<schemaObject>80A40A8B-4270-475A-66C2-07FAE12A4C2B</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>AC50AD9D-BBC5-BF93-4240-A730198CEC5F</segment>
+<tableSpace>6FD4541F-6C4B-5A33-F900-523D1E37668E</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="EMPLOYEE_ID" id="31F8FD86-1CED-5A3A-BCFF-C95743B340E1">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="JOB_ID" id="54FBF731-1D27-C29D-2AF2-2EED4372888C">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="START_DATE" id="5E998D9B-F7AB-D3DC-57D2-AABBC861F546">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="END_DATE" id="8FDB1FD5-FF2A-CB28-4437-10D8A958ED77">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPARTMENT_ID" id="D84E8220-DD1B-2687-5A69-B5DB79DABFE6">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="JHIST_EMP_ID_ST_DATE_PK" id="30BDA653-FE6C-BEA1-E406-063C65C13D49">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+<schemaObject>80A40A8B-4270-475A-66C2-07FAE12A4C2B</schemaObject>
+<segment>EFEC1152-835F-1053-1B73-70D8A55FF26B</segment>
+<tableSpace>6FD4541F-6C4B-5A33-F900-523D1E37668E</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="JHIST_EMPLOYEE_IX" id="3839A57C-2B9B-1296-D845-63F80522CF09">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+<schemaObject>80A40A8B-4270-475A-66C2-07FAE12A4C2B</schemaObject>
+<segment>EFEC1152-835F-1053-1B73-70D8A55FF26B</segment>
+<tableSpace>6FD4541F-6C4B-5A33-F900-523D1E37668E</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="JHIST_DEPARTMENT_IX" id="C6AC1344-BD7E-D5FC-AC40-BE7273944957">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+<schemaObject>80A40A8B-4270-475A-66C2-07FAE12A4C2B</schemaObject>
+<segment>EFEC1152-835F-1053-1B73-70D8A55FF26B</segment>
+<tableSpace>6FD4541F-6C4B-5A33-F900-523D1E37668E</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="JHIST_JOB_IX" id="D878CF61-81C7-DB02-6C63-A3DBEF02DC29">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+<schemaObject>80A40A8B-4270-475A-66C2-07FAE12A4C2B</schemaObject>
+<segment>EFEC1152-835F-1053-1B73-70D8A55FF26B</segment>
+<tableSpace>6FD4541F-6C4B-5A33-F900-523D1E37668E</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="JHIST_JOB_FK" id="1C1EB0B7-D489-C5F9-8D08-724B6EFF92AF">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="JHIST_DEPT_FK" id="A4129E78-C5A3-D33B-3FA4-2582D996FC1F">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="JHIST_EMP_FK" id="B3A9DD36-66B4-95C2-5006-20E879D3EB6C">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+<enable>NO</enable>
+<validate>NO</validate>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="JHIST_EMP_ID_ST_DATE_PK" id="6808AFBF-12DC-F9BF-523F-259CB2C0E81D">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+<segment>EFEC1152-835F-1053-1B73-70D8A55FF26B</segment>
+<tableSpace>6FD4541F-6C4B-5A33-F900-523D1E37668E</tableSpace>
+<existingIndex>30BDA653-FE6C-BEA1-E406-063C65C13D49</existingIndex>
+<indexSegment>EFEC1152-835F-1053-1B73-70D8A55FF26B</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="JHIST_DATE_INTERVAL" id="4F49844F-9015-7B40-F058-D4312CE392AF">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-02 08:01:18 UTC</createdTime>
+<ownerDesignName>hr_relations</ownerDesignName>
+</TableCheckConstraint>
+</tableCheckConstraints>
+</TableProxyOraclev12c>
