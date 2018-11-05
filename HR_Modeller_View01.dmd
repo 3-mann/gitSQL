@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="HR_Modeller_View01" id="62559F2D-F03C-F746-A920-79A5A98348F1" version="3.5">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-10-31 12:22:32 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>62559F2D-F03C-F746-A920-79A5A98348F1</designId>
+</OSDM_Design>

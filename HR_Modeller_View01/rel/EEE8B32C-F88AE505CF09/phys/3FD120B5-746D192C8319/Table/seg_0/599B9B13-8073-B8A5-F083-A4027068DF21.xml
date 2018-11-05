@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="JOBS" directorySegmentName="seg_0" id="599B9B13-8073-B8A5-F083-A4027068DF21">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-10-31 12:38:56 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+<schemaObject>6A532DB8-2D19-67E9-A99D-72D1B849FE29</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>06DEAB10-562B-53F1-A61D-1CE0CF3067AC</segment>
+<tableSpace>5B647CF9-ECD0-EC94-9238-311049A59151</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<user>F7F060DE-CC6C-76AF-C58B-DDB75F6470D3</user>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="JOB_ID" id="5AB6028A-13B2-25B6-CA68-4EAEC6636FF9">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-10-31 12:38:56 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MIN_SALARY" id="79A203B4-E3DF-C7DF-C106-184D587C5494">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-10-31 12:38:56 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MAX_SALARY" id="7C06F0E2-773E-F25D-EE1C-827DE739448F">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-10-31 12:38:56 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="JOB_TITLE" id="CA949413-3A82-AEAB-6AB2-FFEDAEF9FEBC">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-10-31 12:38:56 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="JOB_ID_PK" id="6A518664-5980-9F59-DEE1-C750AC4D96E0">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-10-31 12:38:57 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+<schemaObject>6A532DB8-2D19-67E9-A99D-72D1B849FE29</schemaObject>
+<segment>B70579DE-8FB2-5394-DFE7-C8BC21BFDAE0</segment>
+<tableSpace>5B647CF9-ECD0-EC94-9238-311049A59151</tableSpace>
+<user>F7F060DE-CC6C-76AF-C58B-DDB75F6470D3</user>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="JOB_ID_PK" id="406CDE10-ECBE-169A-2F67-86A64285D2F9">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-10-31 12:38:57 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+<segment>B70579DE-8FB2-5394-DFE7-C8BC21BFDAE0</segment>
+<tableSpace>5B647CF9-ECD0-EC94-9238-311049A59151</tableSpace>
+<user>F7F060DE-CC6C-76AF-C58B-DDB75F6470D3</user>
+<existingIndex>6A518664-5980-9F59-DEE1-C750AC4D96E0</existingIndex>
+<indexSegment>B70579DE-8FB2-5394-DFE7-C8BC21BFDAE0</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="JOB_GRADES" directorySegmentName="seg_0" id="F2F3C878-5B54-3BEA-4F5A-41E588EE973A">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-10-31 12:38:24 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+<schemaObject>6A532DB8-2D19-67E9-A99D-72D1B849FE29</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>06DEAB10-562B-53F1-A61D-1CE0CF3067AC</segment>
+<tableSpace>5B647CF9-ECD0-EC94-9238-311049A59151</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<user>F7F060DE-CC6C-76AF-C58B-DDB75F6470D3</user>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="LOWEST_SAL" id="3352B6F6-1721-A0F3-FDBA-14B04FBC41B1">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-10-31 12:38:24 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="GRADE_LEVEL" id="686BF065-2734-00CC-32B5-396F344795EB">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-10-31 12:38:24 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HIGHEST_SAL" id="951B8ACA-EED5-B18E-24DB-D2B2D76988B1">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-10-31 12:38:24 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+</TableProxyOraclev12c>
