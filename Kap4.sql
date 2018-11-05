@@ -33,7 +33,7 @@ SELECT '('||TRIM('   123  456      ')||')' FROM dual;
 SELECT LTRIM('***123**456******', '*') FROM dual; -- 123**456******
 SELECT RTRIM('***123**456******', '*') FROM dual; -- ***123**456
 
-SELECT RTRIM('***123**456******', '***') FROM dual; -- ***123**456
+SELECT RTRIM('***123**456****', '***') FROM dual; -- ***123**456
 SELECT TRIM(BOTH '**' FROM '***123**456******') FROM dual; -- Error
 -- ORA-30001: Trim-Gruppe darf nur ein Zeichen enthalten
 
@@ -63,6 +63,10 @@ MOD(1350,200) MOD(200,1350) MOD(200,200)   MOD(7,2)   MOD(8,2)
           150           200            0          1          0
 */
 
+select replace(replace(replace(mod(&&Zahl,&&Teiler),'0','ohne Rest teilbar')
+                ,1,'Rest = 1')
+            ,'*','Rest = ' + mod(Zahl, Teiler))  from Dual;
+Undef Zahl Teiler;
 
 SELECT SYSDATE, CURRENT_DATE FROM dual;
 SELECT SYSTIMESTAMP, CURRENT_TIMESTAMP FROM dual;
