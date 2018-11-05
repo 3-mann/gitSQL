@@ -9,7 +9,8 @@
 <showLabels>false</showLabels>
 <showRelAttributes>false</showRelAttributes>
 <gridEnabled>true</gridEnabled>
-<showGrid>false</showGrid>
+<showGrid>true</showGrid>
+<showPageGrid>true</showPageGrid>
 <diagramColor>-1</diagramColor>
 <display>false</display>
 <notation>1</notation>
