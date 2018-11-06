@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AB0D5D57-80D3-6C28-C4AA-ACF8BFDAD3BE" schemaObject="0402833C-6CAE-4D24-DBC7-6D4EF354DE10" name="BONUS">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>BONUS</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:35 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ENAME" id="396F1C14-FC05-BE04-45F5-CD347DBBF616">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>BONUS</sourceObjSchema>
+<sourceObjName>ENAME</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:36 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="JOB" id="BF35C2FE-0ED4-AFDC-BF64-C5F747313027">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>BONUS</sourceObjSchema>
+<sourceObjName>JOB</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:36 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SAL" id="EBB2AF4A-3092-DD9A-622E-960849F59E68">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>BONUS</sourceObjSchema>
+<sourceObjName>SAL</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:36 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COMM" id="0F8AACBA-35DC-703C-1FD5-8AEFC9728E3E">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>BONUS</sourceObjSchema>
+<sourceObjName>COMM</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:36 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>

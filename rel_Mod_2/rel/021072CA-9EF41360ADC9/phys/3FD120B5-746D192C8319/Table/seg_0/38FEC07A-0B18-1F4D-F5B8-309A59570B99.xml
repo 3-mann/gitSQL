@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="EMP" directorySegmentName="seg_0" id="38FEC07A-0B18-1F4D-F5B8-309A59570B99">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 09:07:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<schemaObject>0402833C-6CAE-4D24-DBC7-6D4EF354DE10</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>0E28F66D-90AC-831C-CAAA-D352198257E9</segment>
+<tableSpace>BAEBF2C1-7C08-8E23-FECE-1046EC3A9B7E</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="HIREDATE" id="057846EA-D189-2F70-9816-35B24ABB8B83">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 09:07:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="JOB" id="10C51D91-19DB-8835-10EE-91B1DD0EDF37">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 09:07:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ENAME" id="2655DE62-9F1A-42A5-5C96-82C2F70C1866">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 09:07:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COMM" id="279A7485-A08C-78CA-B3B7-78681390F6EE">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 09:07:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMPNO" id="5E48292D-A631-6BEC-1C36-219196D6B949">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 09:07:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SAL" id="919C3474-2EBB-47BB-6EA3-B07C1EE1F41A">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 09:07:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPTNO" id="97569FE0-AFC9-8CB7-81FC-3A1B276C55CA">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 09:07:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MGR" id="ACEC4EFA-6388-A64E-5B5B-48720497512F">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 09:07:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_EMP" id="890FF808-6207-1B57-D554-9AFE078F5448">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 09:07:14 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<schemaObject>0402833C-6CAE-4D24-DBC7-6D4EF354DE10</schemaObject>
+<segment>CFABFFD8-E94E-6B5B-6901-A9FE89497BA8</segment>
+<tableSpace>BAEBF2C1-7C08-8E23-FECE-1046EC3A9B7E</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_DEPTNO" id="76BBA84B-F6F4-06C0-0CEF-5873C078BAB7">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 09:07:14 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_EMP" id="C0F2A52E-5701-FDB4-A96C-4BD9B98A1305">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 09:07:14 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<segment>CFABFFD8-E94E-6B5B-6901-A9FE89497BA8</segment>
+<tableSpace>BAEBF2C1-7C08-8E23-FECE-1046EC3A9B7E</tableSpace>
+<existingIndex>890FF808-6207-1B57-D554-9AFE078F5448</existingIndex>
+<indexSegment>CFABFFD8-E94E-6B5B-6901-A9FE89497BA8</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

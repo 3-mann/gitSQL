@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DBB7553F-116D-B033-F9C0-70EED5E185DC" schemaObject="FC6E36B6-65DF-D33E-474F-D836BEE82573" name="JOB_GRADES">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>JOB_GRADES</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:31:04 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="GRADE_LEVEL" id="B33E041E-94FD-3335-F254-A495A6D034E6">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>JOB_GRADES</sourceObjSchema>
+<sourceObjName>GRADE_LEVEL</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:31:04 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 BYTE</dataTypeSize>
+<ownDataTypeParameters>3 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOWEST_SAL" id="EB0A2AC0-5BCB-5574-3461-66868085CD9D">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>JOB_GRADES</sourceObjSchema>
+<sourceObjName>LOWEST_SAL</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:31:04 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HIGHEST_SAL" id="D9E989C0-91DD-9EBC-1E83-B16D42598D49">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>JOB_GRADES</sourceObjSchema>
+<sourceObjName>HIGHEST_SAL</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:31:04 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>

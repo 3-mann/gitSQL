@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AA78D3A1-DAB8-F34C-AE31-44221C875CF4" schemaObject="FC6E36B6-65DF-D33E-474F-D836BEE82573" name="REGIONS">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>REGIONS</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:29:34 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="REGION_ID" id="39C0B087-11A3-B8C0-2D4D-E05BFC661068">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>REGIONS</sourceObjSchema>
+<sourceObjName>REGION_ID</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:29:34 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>REGION_ID_NN</notNullConstraintName>
+</Column>
+<Column name="REGION_NAME" id="8A4B52D0-45E0-35F5-F45C-6B71856F5D7E">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>REGIONS</sourceObjSchema>
+<sourceObjName>REGION_NAME</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:29:34 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 BYTE</dataTypeSize>
+<ownDataTypeParameters>25 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E7B13D8E-C325-6C0C-EAD1-14B16E9DEB79" name="REG_ID_PK">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>REG_ID_PK</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:29:34 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="39C0B087-11A3-B8C0-2D4D-E05BFC661068"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6701B335-3B0C-EE67-4EDC-FE4232696D70" schemaObject="FC6E36B6-65DF-D33E-474F-D836BEE82573" name="REG_ID_PK">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>REG_ID_PK</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:29:34 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="39C0B087-11A3-B8C0-2D4D-E05BFC661068"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

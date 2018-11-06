@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A8ED8C78-DBDF-6469-3BE1-6EF7D9E7B937" schemaObject="FC6E36B6-65DF-D33E-474F-D836BEE82573" name="JOBS">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>JOBS</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:49 UTC</createdTime>
+<commentInRDBMS>jobs table with job titles and salary ranges. Contains 19 rows.&lt;br/&gt;References with employees and job_history table.</commentInRDBMS>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="JOB_ID" id="472FD8AA-389E-9416-75EB-D1BEBE685511">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>JOBS</sourceObjSchema>
+<sourceObjName>JOB_ID</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:49 UTC</createdTime>
+<commentInRDBMS>Primary key of jobs table.</commentInRDBMS>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="JOB_TITLE" id="D8732EE5-50FE-3671-3C69-D8D025666C10">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>JOBS</sourceObjSchema>
+<sourceObjName>JOB_TITLE</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:49 UTC</createdTime>
+<commentInRDBMS>A not null column that shows job title, e.g. AD_VP, FI_ACCOUNTANT</commentInRDBMS>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>35 BYTE</dataTypeSize>
+<ownDataTypeParameters>35 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>JOB_TITLE_NN</notNullConstraintName>
+</Column>
+<Column name="MIN_SALARY" id="F0AFD551-37E6-DD03-ADF4-FF5393298379">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>JOBS</sourceObjSchema>
+<sourceObjName>MIN_SALARY</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:49 UTC</createdTime>
+<commentInRDBMS>Minimum salary for a job title.</commentInRDBMS>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MAX_SALARY" id="EE07DEBC-0750-4CD8-5E7B-9AD887D18A9A">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>JOBS</sourceObjSchema>
+<sourceObjName>MAX_SALARY</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:49 UTC</createdTime>
+<commentInRDBMS>Maximum salary for a job title</commentInRDBMS>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D6EF265B-4DF8-A5C6-87B8-728BAA2ADFE0" name="JOB_ID_PK">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>JOB_ID_PK</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:49 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="472FD8AA-389E-9416-75EB-D1BEBE685511"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="15493CD4-73F7-2BE1-8E89-DA976949E686" schemaObject="FC6E36B6-65DF-D33E-474F-D836BEE82573" name="JOB_ID_PK">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>JOB_ID_PK</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:49 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="472FD8AA-389E-9416-75EB-D1BEBE685511"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

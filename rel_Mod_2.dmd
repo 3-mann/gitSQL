@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="rel_Mod_2" id="D52364CB-6F23-239C-4E94-431131319BE6" version="3.5">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:47:39 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>D52364CB-6F23-239C-4E94-431131319BE6</designId>
+</OSDM_Design>
