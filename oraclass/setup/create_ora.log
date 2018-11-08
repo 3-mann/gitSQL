@@ -1,0 +1,346 @@
+SQL> 
+SQL> drop role orax;
+drop role orax
+          *
+FEHLER in Zeile 1:
+ORA-01919: Rolle 'ORAX' nicht vorhanden 
+
+
+SQL> create role orax;
+
+Rolle wurde erstellt.
+
+SQL> grant alter session to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create session to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create table to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create view to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create sequence to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create synonym to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create procedure to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create trigger to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create type to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant query rewrite to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create any index to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create role to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create user to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create any directory to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant drop public synonym to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create public synonym to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create job to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant manage scheduler to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> 
+SQL> grant execute on sys.dbms_stats to orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> 
+SQL> GRANT DEBUG CONNECT SESSION TO orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> GRANT DEBUG ANY PROCEDURE TO orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> GRANT EXECUTE ANY PROCEDURE TO orax;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant select on v_$parameter to ora61;
+grant select on v_$parameter to ora61
+                                *
+FEHLER in Zeile 1:
+ORA-01917: Benutzer oder Funktion ORA61 ist nicht vorhanden 
+
+
+SQL> grant select on v_$parameter to ora62;
+grant select on v_$parameter to ora62
+                                *
+FEHLER in Zeile 1:
+ORA-01917: Benutzer oder Funktion ORA62 ist nicht vorhanden 
+
+
+SQL> 
+SQL> drop user ora1 cascade;
+drop user ora1 cascade
+          *
+FEHLER in Zeile 1:
+ORA-01918: Benutzer 'ORA1' ist nicht vorhanden 
+
+
+SQL> create user ora1 identified by ora1;
+
+Benutzer wurde erstellt.
+
+SQL> grant orax to ora1;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create job to ora1;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create table to ora1;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> alter user ora1 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Benutzer wurde geändert.
+
+SQL> 
+SQL> drop user ora21 cascade;
+drop user ora21 cascade
+          *
+FEHLER in Zeile 1:
+ORA-01918: Benutzer 'ORA21' ist nicht vorhanden 
+
+
+SQL> create user ora21 identified by ora21;
+
+Benutzer wurde erstellt.
+
+SQL> grant orax to ora21;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create job to ora21;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create table to ora21;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> alter user ora21 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Benutzer wurde geändert.
+
+SQL> 
+SQL> drop user ora22 cascade;
+drop user ora22 cascade
+          *
+FEHLER in Zeile 1:
+ORA-01918: Benutzer 'ORA22' ist nicht vorhanden 
+
+
+SQL> create user ora22 identified by ora22;
+
+Benutzer wurde erstellt.
+
+SQL> grant orax to ora22;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create job to ora22;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create table to ora22;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> alter user ora22 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Benutzer wurde geändert.
+
+SQL> 
+SQL> drop user ora23 cascade;
+drop user ora23 cascade
+          *
+FEHLER in Zeile 1:
+ORA-01918: Benutzer 'ORA23' ist nicht vorhanden 
+
+
+SQL> create user ora23 identified by ora23;
+
+Benutzer wurde erstellt.
+
+SQL> grant orax to ora23;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create job to ora23;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create table to ora23;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> alter user ora23 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Benutzer wurde geändert.
+
+SQL> 
+SQL> drop user ora41 cascade;
+drop user ora41 cascade
+          *
+FEHLER in Zeile 1:
+ORA-01918: Benutzer 'ORA41' ist nicht vorhanden 
+
+
+SQL> create user ora41 identified by ora41;
+
+Benutzer wurde erstellt.
+
+SQL> grant orax to ora41;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> alter user ora41 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Benutzer wurde geändert.
+
+SQL> 
+SQL> drop user ora61 cascade;
+drop user ora61 cascade
+          *
+FEHLER in Zeile 1:
+ORA-01918: Benutzer 'ORA61' ist nicht vorhanden 
+
+
+SQL> create user ora61 identified by ora61;
+
+Benutzer wurde erstellt.
+
+SQL> grant orax to ora61;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create job to ora61;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create table to ora61;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant select on v_$parameter to ora61;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> alter user ora61 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Benutzer wurde geändert.
+
+SQL> 
+SQL> drop user ora62 cascade;
+drop user ora62 cascade
+          *
+FEHLER in Zeile 1:
+ORA-01918: Benutzer 'ORA62' ist nicht vorhanden 
+
+
+SQL> create user ora62 identified by ora62;
+
+Benutzer wurde erstellt.
+
+SQL> grant orax to ora62;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create job to ora62;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create table to ora62;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> alter user ora62 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Benutzer wurde geändert.
+
+SQL> 
+SQL> drop user ora81 cascade;
+drop user ora81 cascade
+          *
+FEHLER in Zeile 1:
+ORA-01918: Benutzer 'ORA81' ist nicht vorhanden 
+
+
+SQL> create user ora81 identified by ora81;
+
+Benutzer wurde erstellt.
+
+SQL> grant orax to ora81;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create job to ora81;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> grant create table to ora81;
+
+Benutzerzugriff (Grant) wurde erteilt.
+
+SQL> alter user ora81 default tablespace users temporary tablespace temp
+  2  quota unlimited on users;
+
+Benutzer wurde geändert.
+
+SQL> 
+SQL> spool off

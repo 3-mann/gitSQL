@@ -1,0 +1,45 @@
+Employees who earn more than average salary: 
+REPORT GENERATED ON 16-JAN-13
+
+Hartstein                         20   $13,000.00
+Raphaely                          30   $11,000.00
+Weiss                             50    $8,000.00
+Fripp                             50    $8,200.00
+Kaufling                          50    $7,900.00
+Vollman                           50    $6,500.00
+Mourgos                           50    $5,800.00
+Ladwig                            50    $3,600.00
+Rajs                              50    $3,500.00
+Sarchand                          50    $4,200.00
+Bull                              50    $4,100.00
+Chung                             50    $3,800.00
+Dilly                             50    $3,600.00
+Bell                              50    $4,000.00
+Everett                           50    $3,900.00
+Ernst                             60    $6,000.00
+Hunold                            60    $9,000.00
+Russell                           80   $14,000.00
+Partners                          80   $13,500.00
+Errazuriz                         80   $12,000.00
+Cambrault                         80   $11,000.00
+Zlotkey                           80   $10,500.00
+Tucker                            80   $10,000.00
+Bernstein                         80    $9,500.00
+Hall                              80    $9,000.00
+King                              80   $10,000.00
+Sully                             80    $9,500.00
+McEwen                            80    $9,000.00
+Vishney                           80   $10,500.00
+Greene                            80    $9,500.00
+Ozer                              80   $11,500.00
+Bloom                             80   $10,000.00
+Fox                               80    $9,600.00
+Abel                              80   $11,000.00
+Hutton                            80    $8,800.00
+Taylor                            80   $10,406.00
+King                              90   $24,000.00
+Faviet                           100    $9,000.00
+Greenberg                        100   $12,008.00
+Higgins                          110   $12,008.00
+
+*** END OF REPORT ***
