@@ -46,6 +46,73 @@ FROM employees;
 
 SELECT    last_name
         , salary
+        , hire_date
         , commission_pct "Prov.fakt."
         , (salary + salary*NVL2(commission_pct,commission_pct,0))"incl. Provi"
 FROM employees;
+
+--##########################################################################################
+
+select last_name,hire_date 
+    from employees
+    where hire_date > (
+        select hire_date from employees where last_name='Higgins'
+    );
+    
+select e.last_name, s.hire_date 
+    from employees e join employees s 
+    on s.last_name = 'Higgins'where e.hire_date > s.hire_date
+    ;
+     
+     
+select e.last_name, e.hire_date
+    from employees e, (
+        select hire_DATE from employees where last_name = 'Higgins'
+    ) s
+    where e.hire_date > s.hire_date
+    ; 
+
+select first_name, last_name from employees
+    where substr(first_name, 1, 1) = (
+        select substr(first_name, 1, 1) 
+        from employees where last_name = 'Zlotkey'
+    )
+    and last_name != 'Zlotkey'
+;
+--############################################################################
+
+Select first_name||' '||last_name, salary 
+    from employees 
+    where salary > (
+        select avg(salary) from employees where department_id = (
+        select department_id from departments where department_name = 'Sales'
+        )
+    )
+;
+
+/*
+ CONNECT-BY-Klausel ::=
+   START WITH <Spaltenname1 = Konstante>
+   CONNECT BY [NOCYCLE] <Spaltenname1> = PRIOR <Spaltenname2> <Bedingung>
+   ORDER SIBLINGS BY <Spaltenname1>
+*/
+
+--###################################################################################
+select 
+    count(employee_id) Anzahl,(
+        select department_name from departments where department_id in (
+            select 1 from employees group by department_id  having count(employee_id) > (
+                select count(employee_id) from employees where department_id = (
+                    select department_id from employees where last_name like '%Zlot%' )  )  )  ) cnt1 
+    from employees group by department_id 
+    having count(employee_id) > (
+        select count(employee_id) from employees where department_id = (
+            select department_id from employees where last_name like '%Zlot%'  )   ) 
+; 
+--###################################################################################
+Select last_name , email 
+from employees
+-- union all 
+minus
+SELECT last_name , email
+FROM  retired_employees;

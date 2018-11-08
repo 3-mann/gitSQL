@@ -147,3 +147,6 @@ select          job_id
     group by    department_id, job_id, manager_id, TO_CHAR(department_id),
                 grouping sets(job_id,manager_id)
     order by    1, 2, 3;
+
+
+

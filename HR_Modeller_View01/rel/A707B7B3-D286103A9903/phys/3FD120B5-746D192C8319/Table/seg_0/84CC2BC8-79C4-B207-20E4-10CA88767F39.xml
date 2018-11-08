@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="RETIRED_EMPLOYEES" directorySegmentName="seg_0" id="84CC2BC8-79C4-B207-20E4-10CA88767F39">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-08 10:40:04 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+<schemaObject>B13E758A-2B97-92A2-7446-17E9B62F9F8D</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4CC9E51A-6767-4BB0-1EFC-06A2B0854D98</segment>
+<tableSpace>027E07A2-9ECA-919D-B327-06E4F255E20A</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="FIRST_NAME" id="0397A740-030D-86A9-EC96-E99EE42A37BF">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-08 10:40:05 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MANAGER_ID" id="11BFE88D-5BC4-9629-4924-828D0D3B8369">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-08 10:40:05 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LAST_NAME" id="15BDAE6E-9EAC-7A12-91F9-95288E16D975">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-08 10:40:05 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPARTMENT_ID" id="4A29612B-4069-6944-78A1-518E04A1C808">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-08 10:40:05 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SALARY" id="7D612AB8-697E-C00B-3C37-E949ED53FE25">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-08 10:40:05 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMPLOYEE_ID" id="905B8406-4836-177C-4142-B6B5DCD8660A">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-08 10:40:05 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMAIL" id="9978E2F4-A6F4-A340-B342-0D834FED6929">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-08 10:40:05 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RETIRED_DATE" id="A468489D-24F8-8592-7F32-562F040E6982">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-08 10:40:05 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="JOB_ID" id="F4FB79FB-1D1F-D93B-7850-10070AEF2514">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-08 10:40:05 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+</TableProxyOraclev12c>
