@@ -101,9 +101,9 @@ Select first_name||' '||last_name, salary
 select 
     count(employee_id) Anzahl,(
         select department_name from departments where department_id in (
-            select 1 from employees group by department_id  having count(employee_id) > (
-                select count(employee_id) from employees where department_id = (
-                    select department_id from employees where last_name like '%Zlot%' )  )  )  ) cnt1 
+            select department_id from employees group by department_id  having count(employee_id) > (
+                select count(department_id) from employees where department_id = (
+                    select department_id from employees where last_name like '%Zlot%' )  )  )  ) Department 
     from employees group by department_id 
     having count(employee_id) > (
         select count(employee_id) from employees where department_id = (
