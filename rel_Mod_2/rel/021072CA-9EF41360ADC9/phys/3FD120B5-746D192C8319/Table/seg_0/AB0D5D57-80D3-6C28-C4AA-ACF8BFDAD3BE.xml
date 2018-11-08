@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="BONUS" directorySegmentName="seg_0" id="AB0D5D57-80D3-6C28-C4AA-ACF8BFDAD3BE">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:35 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<schemaObject>0402833C-6CAE-4D24-DBC7-6D4EF354DE10</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>C7022B4D-D53F-759D-F12F-9E3196EBE34B</segment>
+<tableSpace>BAEBF2C1-7C08-8E23-FECE-1046EC3A9B7E</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="COMM" id="0F8AACBA-35DC-703C-1FD5-8AEFC9728E3E">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:36 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ENAME" id="396F1C14-FC05-BE04-45F5-CD347DBBF616">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:36 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="JOB" id="BF35C2FE-0ED4-AFDC-BF64-C5F747313027">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:36 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SAL" id="EBB2AF4A-3092-DD9A-622E-960849F59E68">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:36 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+</TableProxyOraclev12c>

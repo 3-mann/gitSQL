@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Diagram class="oracle.dbtools.crest.swingui.relational.DPVRelational" name="Relational_1" id="A30A191B-3AE9-C661-2CC4-F1D0C70FC87F">
+<createdBy>dreimann</createdBy>
+<modifiedBy>dreimann</modifiedBy>
+<createdTime>2018-11-06 07:48:10 UTC</createdTime>
+<autoRoute>false</autoRoute>
+<boxInbox>true</boxInbox>
+<showLegend>false</showLegend>
+<showLabels>false</showLabels>
+<showRelAttributes>false</showRelAttributes>
+<gridEnabled>false</gridEnabled>
+<showGrid>false</showGrid>
+<diagramColor>-1</diagramColor>
+<display>false</display>
+<notation>1</notation>
+<objectViews>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="38FEC07A-0B18-1F4D-F5B8-309A59570B99" otype="Table" vid="14AA765E-CBFF-4835-6911-BCAB6AC007F3">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="50" y="52" width="218" height="198"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="A694FCCB-806F-820B-B318-98046B805A58" otype="Table" vid="4EFDE28C-34ED-4FF2-2DDE-7B04E3741E59">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="336" y="308" width="139" height="68"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="AB0D5D57-80D3-6C28-C4AA-ACF8BFDAD3BE" otype="Table" vid="45058626-16AF-17AD-2DD3-FDEA099F6452">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="333" y="116" width="203" height="82"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="C81949BC-5F58-6CCF-CD52-21E1F00FD15E" otype="Table" vid="047D32E2-F88D-A6AB-0DE6-DA2D99AE51E3">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="51" y="309" width="209" height="108"/>
+</OView>
+</objectViews>
+<connectors>
+<Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="A99745CE-B58C-961F-4EEA-85BBB67FE036" otype="FKIndexAssociation" vid_source="047D32E2-F88D-A6AB-0DE6-DA2D99AE51E3" vid_target="14AA765E-CBFF-4835-6911-BCAB6AC007F3">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="155" y="309"/>
+<point x="155" y="250"/>
+</points>
+</Connector>
+</connectors>
+</Diagram>

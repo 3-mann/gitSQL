@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A694FCCB-806F-820B-B318-98046B805A58" schemaObject="0402833C-6CAE-4D24-DBC7-6D4EF354DE10" name="SALGRADE">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>SALGRADE</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:56 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="GRADE" id="05CCFF71-A1EA-FE72-76B2-F89A139D4707">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SALGRADE</sourceObjSchema>
+<sourceObjName>GRADE</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:57 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOSAL" id="E1D8B007-6A13-A943-7B32-828F254AF799">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SALGRADE</sourceObjSchema>
+<sourceObjName>LOSAL</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:57 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HISAL" id="67BAC59E-ED4C-70EC-1640-0C35E108D90A">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SALGRADE</sourceObjSchema>
+<sourceObjName>HISAL</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:57 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>

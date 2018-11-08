@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="SALGRADE" directorySegmentName="seg_0" id="A694FCCB-806F-820B-B318-98046B805A58">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:56 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<schemaObject>0402833C-6CAE-4D24-DBC7-6D4EF354DE10</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>0E28F66D-90AC-831C-CAAA-D352198257E9</segment>
+<tableSpace>BAEBF2C1-7C08-8E23-FECE-1046EC3A9B7E</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="GRADE" id="05CCFF71-A1EA-FE72-76B2-F89A139D4707">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:57 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HISAL" id="67BAC59E-ED4C-70EC-1640-0C35E108D90A">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:57 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOSAL" id="E1D8B007-6A13-A943-7B32-828F254AF799">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:57 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+</TableProxyOraclev12c>

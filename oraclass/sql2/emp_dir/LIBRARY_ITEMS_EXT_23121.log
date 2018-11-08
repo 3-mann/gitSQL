@@ -1,0 +1,25 @@
+
+
+ LOG file opened at 04/09/14 23:28:31
+
+KUP-05004:   Warning: Intra source concurrency disabled because parallel select was not requested.
+
+Field Definitions for table LIBRARY_ITEMS_EXT
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    CATEGORY_ID                     CHAR (255)
+      Terminated by ","
+      Trim whitespace same as SQL Loader
+    BOOK_ID                         CHAR (255)
+      Terminated by ","
+      Trim whitespace same as SQL Loader
+    BOOK_PRICE                      CHAR (255)
+      Terminated by ","
+      Trim whitespace same as SQL Loader
+    QUANTITY                        CHAR (255)
+      Terminated by ","
+      Trim whitespace same as SQL Loader

@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="REGIONS" directorySegmentName="seg_0" id="23C682B6-92AF-5D0F-2F0C-EDF42BE34F8F">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-05 09:32:05 UTC</createdTime>
+<ownerDesignName>test</ownerDesignName>
+<schemaObject>C10B0260-F8AE-D340-BCD9-6E9F1853E6D3</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>FF8DC080-41F5-FD1B-E61C-376B3D64A891</segment>
+<tableSpace>D6B41FE3-7A99-DBF4-ECBA-BA5DDF6D62B2</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="REGION_NAME" id="0D4B4206-1FC8-2549-21D0-288C71AFCFA9">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-05 09:32:06 UTC</createdTime>
+<ownerDesignName>test</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="REGION_ID" id="376C8CAE-52DE-DE3F-910F-88B9E28535F0">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-05 09:32:06 UTC</createdTime>
+<ownerDesignName>test</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="REG_ID_PK" id="B991AAAC-BAEE-9644-3229-0FB5D69B2678">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-05 09:32:06 UTC</createdTime>
+<ownerDesignName>test</ownerDesignName>
+<schemaObject>C10B0260-F8AE-D340-BCD9-6E9F1853E6D3</schemaObject>
+<segment>B73F51C5-40A9-A278-C9D8-673728F97DBF</segment>
+<tableSpace>D6B41FE3-7A99-DBF4-ECBA-BA5DDF6D62B2</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="REG_ID_PK" id="9A69D3D0-011E-DA0B-581D-E2676BFA00DE">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-05 09:32:06 UTC</createdTime>
+<ownerDesignName>test</ownerDesignName>
+<segment>B73F51C5-40A9-A278-C9D8-673728F97DBF</segment>
+<tableSpace>D6B41FE3-7A99-DBF4-ECBA-BA5DDF6D62B2</tableSpace>
+<existingIndex>B991AAAC-BAEE-9644-3229-0FB5D69B2678</existingIndex>
+<indexSegment>B73F51C5-40A9-A278-C9D8-673728F97DBF</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

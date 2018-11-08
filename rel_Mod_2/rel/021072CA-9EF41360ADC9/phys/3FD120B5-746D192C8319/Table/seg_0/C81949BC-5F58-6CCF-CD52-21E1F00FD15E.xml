@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="DEPT" directorySegmentName="seg_0" id="C81949BC-5F58-6CCF-CD52-21E1F00FD15E">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:48 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<schemaObject>0402833C-6CAE-4D24-DBC7-6D4EF354DE10</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>0E28F66D-90AC-831C-CAAA-D352198257E9</segment>
+<tableSpace>BAEBF2C1-7C08-8E23-FECE-1046EC3A9B7E</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DEPTNO" id="80977C3B-1D6F-C5D6-CD5D-CB7D8FE31759">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:48 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOC" id="995E1CDF-92EA-767A-6B3B-85DB97925111">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:48 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DNAME" id="F9D56305-A5D5-3DEA-E010-A7BC1B24C387">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:48 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_DEPT" id="6452F929-8733-57E6-2358-9805B5894897">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:48 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<schemaObject>0402833C-6CAE-4D24-DBC7-6D4EF354DE10</schemaObject>
+<segment>CFABFFD8-E94E-6B5B-6901-A9FE89497BA8</segment>
+<tableSpace>BAEBF2C1-7C08-8E23-FECE-1046EC3A9B7E</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_DEPT" id="4D52BBC1-4051-96BB-D028-4E405A8F8468">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 07:48:49 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<segment>CFABFFD8-E94E-6B5B-6901-A9FE89497BA8</segment>
+<tableSpace>BAEBF2C1-7C08-8E23-FECE-1046EC3A9B7E</tableSpace>
+<existingIndex>6452F929-8733-57E6-2358-9805B5894897</existingIndex>
+<indexSegment>CFABFFD8-E94E-6B5B-6901-A9FE89497BA8</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

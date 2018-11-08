@@ -1,0 +1,9 @@
+drop PROCEDURE create_table;
+drop PROCEDURE add_col;
+drop FUNCTION del_rows;
+drop PROCEDURE add_row;
+drop FUNCTION get_emp;
+drop FUNCTION annual_sal;
+drop PROCEDURE compile_plsql;
+drop FUNCTION delete_all_rows;
+drop PROCEDURE insert_row;

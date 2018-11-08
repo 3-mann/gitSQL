@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="JOB_GRADES" directorySegmentName="seg_0" id="DBB7553F-116D-B033-F9C0-70EED5E185DC">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:31:04 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<schemaObject>FC6E36B6-65DF-D33E-474F-D836BEE82573</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>AB4BC6DC-0855-694E-574A-ED57661CF14F</segment>
+<tableSpace>45129B88-9B92-C6E1-D46F-61D5F2A54825</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="GRADE_LEVEL" id="B33E041E-94FD-3335-F254-A495A6D034E6">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:31:04 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HIGHEST_SAL" id="D9E989C0-91DD-9EBC-1E83-B16D42598D49">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:31:04 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOWEST_SAL" id="EB0A2AC0-5BCB-5574-3461-66868085CD9D">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:31:04 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+</TableProxyOraclev12c>

@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="DEPARTMENTS" directorySegmentName="seg_0" id="69443FA7-6DF3-B816-0F8C-DDF50037EABF">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:21:10 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<schemaObject>FC6E36B6-65DF-D33E-474F-D836BEE82573</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>AB4BC6DC-0855-694E-574A-ED57661CF14F</segment>
+<tableSpace>45129B88-9B92-C6E1-D46F-61D5F2A54825</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="LOCATION_ID" id="2FE10ECA-8CE2-4992-E5B4-34B3319E1194">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:21:11 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPARTMENT_ID" id="305B677C-D26F-487D-EB8E-57CF50F5A4BC">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:21:11 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPARTMENT_NAME" id="49F2F66B-69C3-86D5-BF39-21D25BD98C71">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:21:11 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MANAGER_ID" id="FA5B5C90-1D72-0AC2-B031-C99E6A2CBC31">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:21:11 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DEPT_LOCATION_IX" id="0CD6D2A4-EF71-6D47-58D5-F91506637A37">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:21:12 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<schemaObject>FC6E36B6-65DF-D33E-474F-D836BEE82573</schemaObject>
+<segment>D95D6C9D-2729-2EEE-9BE4-4CCBA0EBEF3D</segment>
+<tableSpace>45129B88-9B92-C6E1-D46F-61D5F2A54825</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DEPT_ID_PK" id="431AEBB9-3D79-D339-E45D-B02EE618D899">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:21:12 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<schemaObject>FC6E36B6-65DF-D33E-474F-D836BEE82573</schemaObject>
+<segment>D95D6C9D-2729-2EEE-9BE4-4CCBA0EBEF3D</segment>
+<tableSpace>45129B88-9B92-C6E1-D46F-61D5F2A54825</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="DEPT_MGR_FK" id="73A3E2CE-8820-27DA-B4B3-AB90F839FD1F">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:21:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="DEPT_LOC_FK" id="CA589EBE-2452-842A-CC99-4E80F8D2ADB1">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:21:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="DEPT_LOC_FK" id="F15DD39E-2C11-5342-DFA9-45B83FD1220A">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:21:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="DEPT_ID_PK" id="70CBCF1E-5073-CF22-10CF-6A8DDF8F8DC0">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:21:13 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<segment>D95D6C9D-2729-2EEE-9BE4-4CCBA0EBEF3D</segment>
+<tableSpace>45129B88-9B92-C6E1-D46F-61D5F2A54825</tableSpace>
+<existingIndex>431AEBB9-3D79-D339-E45D-B02EE618D899</existingIndex>
+<indexSegment>D95D6C9D-2729-2EEE-9BE4-4CCBA0EBEF3D</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

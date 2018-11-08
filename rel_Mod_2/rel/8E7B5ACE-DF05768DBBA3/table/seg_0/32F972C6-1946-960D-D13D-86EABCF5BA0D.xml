@@ -1,0 +1,214 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="32F972C6-1946-960D-D13D-86EABCF5BA0D" schemaObject="FC6E36B6-65DF-D33E-474F-D836BEE82573" name="JOB_HISTORY">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>JOB_HISTORY</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:30 UTC</createdTime>
+<commentInRDBMS>Table that stores job history of the employees. If an employee&lt;br/&gt;changes departments within the job or changes jobs within the department,&lt;br/&gt;new rows get inserted into this table with old job information of the&lt;br/&gt;employee. Contains a complex primary key: employee_id+start_date.&lt;br/&gt;Contains 25 rows. References with jobs, employees, and departments tables.</commentInRDBMS>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EMPLOYEE_ID" id="41F92B66-8E16-05AD-C6D6-DB320C606141">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>JOB_HISTORY</sourceObjSchema>
+<sourceObjName>EMPLOYEE_ID</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:30 UTC</createdTime>
+<commentInRDBMS>A not null column in the complex primary key employee_id+start_date.&lt;br/&gt;Foreign key to employee_id column of the employee table</commentInRDBMS>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>JHIST_EMPLOYEE_NN</notNullConstraintName>
+<associations>
+<colAssociation fkAssociation="C54D36D6-C863-4820-1038-8C4C4DA472AA" referredColumn="03E647F0-F379-20B1-503B-B9D92E71130E"/>
+</associations>
+</Column>
+<Column name="START_DATE" id="76F6A757-E987-7BA7-24C2-42A64F6FA303">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>JOB_HISTORY</sourceObjSchema>
+<sourceObjName>START_DATE</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:30 UTC</createdTime>
+<commentInRDBMS>A not null column in the complex primary key employee_id+start_date.&lt;br/&gt;Must be less than the end_date of the job_history table. (enforced by&lt;br/&gt;constraint jhist_date_interval)</commentInRDBMS>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>JHIST_START_DATE_NN</notNullConstraintName>
+</Column>
+<Column name="END_DATE" id="89FA1E65-E08D-04A4-5CC2-33E735D4475C">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>JOB_HISTORY</sourceObjSchema>
+<sourceObjName>END_DATE</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:30 UTC</createdTime>
+<commentInRDBMS>Last day of the employee in this job role. A not null column. Must be&lt;br/&gt;greater than the start_date of the job_history table.&lt;br/&gt;(enforced by constraint jhist_date_interval)</commentInRDBMS>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>JHIST_END_DATE_NN</notNullConstraintName>
+</Column>
+<Column name="JOB_ID" id="1DDE0349-DF96-732F-3315-60A1DF718A94">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>JOB_HISTORY</sourceObjSchema>
+<sourceObjName>JOB_ID</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:30 UTC</createdTime>
+<commentInRDBMS>Job role in which the employee worked in the past; foreign key to&lt;br/&gt;job_id column in the jobs table. A not null column.</commentInRDBMS>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>JHIST_JOB_NN</notNullConstraintName>
+<associations>
+<colAssociation fkAssociation="0E2F444B-3C0D-DA1B-3916-0C429D64FDA0" referredColumn="472FD8AA-389E-9416-75EB-D1BEBE685511"/>
+</associations>
+</Column>
+<Column name="DEPARTMENT_ID" id="0095ED89-145D-07B7-F58A-0D5BB3BE0289">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>JOB_HISTORY</sourceObjSchema>
+<sourceObjName>DEPARTMENT_ID</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:30 UTC</createdTime>
+<commentInRDBMS>Department id in which the employee worked in the past; foreign key to deparment_id column in the departments table</commentInRDBMS>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,4,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E764A66B-E6D7-D94C-DDED-6B03560B5117" referredColumn="305B677C-D26F-487D-EB8E-57CF50F5A4BC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="106F140E-B6B3-B852-4C23-CB29E95158A9" name="JHIST_EMP_ID_ST_DATE_PK">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>JHIST_EMP_ID_ST_DATE_PK</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:32 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="41F92B66-8E16-05AD-C6D6-DB320C606141"/>
+<colUsage columnID="76F6A757-E987-7BA7-24C2-42A64F6FA303"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6D483DB7-87A7-BDDE-EC91-E07926CA7379" schemaObject="FC6E36B6-65DF-D33E-474F-D836BEE82573" name="JHIST_DEPARTMENT_IX">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>JHIST_DEPARTMENT_IX</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:32 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0095ED89-145D-07B7-F58A-0D5BB3BE0289"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2B544474-D88C-2C65-2845-ECB5177453D3" schemaObject="FC6E36B6-65DF-D33E-474F-D836BEE82573" name="JHIST_EMP_ID_ST_DATE_PK">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>JHIST_EMP_ID_ST_DATE_PK</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:32 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="41F92B66-8E16-05AD-C6D6-DB320C606141"/>
+<colUsage columnID="76F6A757-E987-7BA7-24C2-42A64F6FA303"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C8235086-1D29-8DD1-002A-CDC3DB1172F2" schemaObject="FC6E36B6-65DF-D33E-474F-D836BEE82573" name="JHIST_EMPLOYEE_IX">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>JHIST_EMPLOYEE_IX</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:32 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="41F92B66-8E16-05AD-C6D6-DB320C606141"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="490E9F4D-3668-C1A3-C420-2DF0C5E98BA3" schemaObject="FC6E36B6-65DF-D33E-474F-D836BEE82573" name="JHIST_JOB_IX">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>JHIST_JOB_IX</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:32 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1DDE0349-DF96-732F-3315-60A1DF718A94"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2867F6DC-C245-FAF9-DA8A-3F84E096860C" name="JHIST_DEPT_FK">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:32 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0095ED89-145D-07B7-F58A-0D5BB3BE0289"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="44E14DBC-2901-A0CB-F434-47D47A86E201" name="JHIST_EMP_FK">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:32 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="41F92B66-8E16-05AD-C6D6-DB320C606141"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1FDD29A9-C3BD-88F5-97EB-8CC0F35CF238" name="JHIST_JOB_FK">
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:32 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1DDE0349-DF96-732F-3315-60A1DF718A94"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="JHIST_DATE_INTERVAL" directorySegmentName="seg_0" id="513276A6-2DB4-4A1D-7A5B-1DE2015692A3">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjSchema>ORA1</sourceObjSchema>
+<sourceObjName>JHIST_DATE_INTERVAL</sourceObjName>
+<createdBy>dreimann</createdBy>
+<createdTime>2018-11-06 08:26:32 UTC</createdTime>
+<ownerDesignName>rel_Mod_2</ownerDesignName>
+<rule>end_date &gt; start_date</rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>
