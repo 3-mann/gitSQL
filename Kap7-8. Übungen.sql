@@ -37,15 +37,15 @@ select 3 dummy, to_char(hire_date, 'Dy'), last_name, hire_date from employees wh
 order by dummy;   
 
 
-SELECT  last_name, to_char(hire_date,'Day D DD' )
+SELECT  first_name||' '||last_name "Name", to_char(hire_date,'Day D DD' )
         ,to_char(hire_date,'D' ) HireDay  
 FROM employees WHERE to_char(hire_date,'Day') LIKE 'Montag%' 
 union
-SELECT  last_name, to_char(hire_date,'Day D DD' )
+SELECT  first_name||' '||last_name "Name", to_char(hire_date,'Day D DD' )
         ,to_char(hire_date,'D' ) HireDay  
-FROM employees WHERE to_char(hire_date,'Day') LIKE 'Dienstag%' 
+FROM employees WHERE to_char(hire_date,'Day') LIKE 'Donnerstag%' 
 union
-SELECT  last_name, to_char(hire_date,'Day D DD' )
+SELECT  first_name||' '||last_name "Name", to_char(hire_date,'Day D DD' )
         ,to_char(hire_date,'D' ) HireDay  
 FROM employees WHERE to_char(hire_date,'Day') LIKE 'Freitag%' 
 order by HireDay
