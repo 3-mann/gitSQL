@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="ora1" directorySegmentName="seg_0" id="3270015C-7720-3432-29F6-896F0AD1C1D2">
+<sourceConnName>ora1</sourceConnName>
+<sourceObjName>ORA1</sourceObjName>
+<createdBy>Dieter</createdBy>
+<createdTime>2018-11-08 15:25:40 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+<schemaObject>6A532DB8-2D19-67E9-A99D-72D1B849FE29</schemaObject>
+<quotaItems>
+<QuotaItem class="oracle.dbtools.crest.model.design.storage.oracle.v10g.QuotaItemOraclev10g" name="QuotaItem1" id="1598C27B-55A8-53CF-C2C1-24240F7DEDA9">
+<createdBy>Dieter</createdBy>
+<createdTime>2018-11-08 15:29:18 UTC</createdTime>
+<ownerDesignName>HR_Modeller_View01</ownerDesignName>
+</QuotaItem>
+</quotaItems>
+</UserOraclev10g>
