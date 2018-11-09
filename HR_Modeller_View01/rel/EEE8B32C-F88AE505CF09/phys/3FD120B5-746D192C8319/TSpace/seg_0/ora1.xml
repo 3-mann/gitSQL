@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<TableSpaceOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableSpaceOraclev10g" name="ora1" directorySegmentName="seg_0" id="ora1">
-<createdBy>Dieter</createdBy>
-<createdTime>2018-10-31 12:36:29 UTC</createdTime>
-<ownerDesignName>HR_Modeller_View01</ownerDesignName>
-<emUniformSize>0</emUniformSize>
-<extentManagement>LOCAL</extentManagement>
-</TableSpaceOraclev10g>

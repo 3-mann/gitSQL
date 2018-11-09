@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<DataFlowDesign class="oracle.dbtools.crest.model.design.process.DataFlowDesign" name="Data Flow Diagram_1" id="02BE899B-8D59-8584-2D79-F8F2C76C2AFD" mainViewID="72600317-4C77-14E9-F9EB-3BE06DE3506C" topLevel="true">
-<createdBy>Dieter</createdBy>
-<createdTime>2018-10-31 13:52:30 UTC</createdTime>
-<comment>Modell hat noch keine Entitäten&lt;br/&gt;</comment>
-<ownerDesignName>HR_Modeller_View01</ownerDesignName>
-<shouldBeOpen>true</shouldBeOpen>
-</DataFlowDesign>
