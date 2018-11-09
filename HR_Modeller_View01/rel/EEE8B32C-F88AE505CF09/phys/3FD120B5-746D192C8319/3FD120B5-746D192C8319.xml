@@ -1,6 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<StorageDesignOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.StorageDesignOraclev12c" name="Oracle Database 12c" id="55DEC76E-A236-BBD6-02ED-40B599167CAD" siteID="3FD120B5-9F4E-6278-D5E2-746D192C8319" siteName="Oracle Database 12c" siteType="11">
-<createdBy>Dieter</createdBy>
-<createdTime>2018-10-31 12:36:29 UTC</createdTime>
-<ownerDesignName>HR_Modeller_View01</ownerDesignName>
-</StorageDesignOraclev12c>
