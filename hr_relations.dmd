@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="hr_relations" id="2DD39E8A-EDBB-46F8-B1B3-D8AAD0B1B13D" version="3.5">
-<createdBy>dreimann</createdBy>
-<createdTime>2018-11-02 07:53:46 UTC</createdTime>
-<ownerDesignName>hr_relations</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>2DD39E8A-EDBB-46F8-B1B3-D8AAD0B1B13D</designId>
-</OSDM_Design>
