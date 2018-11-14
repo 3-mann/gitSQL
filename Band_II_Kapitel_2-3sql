@@ -1,0 +1,67 @@
+CREATE VIEW my_emp_view AS
+SELECT employee_id,
+       first_name || ' ' || last_name employee_name,
+       salary,
+       salary * 12 annual_salary,
+       department_id
+FROM   employees
+WHERE  department_id <> 90;
+
+DESC my_emp_view;
+
+SELECT * FROM my_emp_view;
+
+SELECT employee_name, annual_salary
+FROM   my_emp_view
+WHERE  annual_salary > 50000
+ORDER BY 2 DESC;
+
+CREATE OR REPLACE VIEW my_emp_view(emp_id, emp_name, salary, ann_salary, dep_id, dep_name) AS
+SELECT employee_id,
+       first_name || ' ' || last_name,
+       salary,
+       salary * 12,
+       --e.department_id,
+       department_id,
+       department_name
+-- FROM   employees e JOIN departments d ON (e.department_id = d.department_id)
+FROM employees join departments using(department_id)
+-- ACHTUNG: ein NATURAL JOIN würde hier zu fehlern führen, weil er auch die Manager_ID matchen würde.
+-- WHERE  e.department_id <> 90;
+WHERE  department_id <> 90
+
+select * from table(dbms_xplan.display_cursor(sql_id=>'null', format=>'ALLSTATS LAST'));
+;
+--###################################################################################################
+drop table emp2 purge;
+Create table emp2 as select * from employees;
+create or replace view my_emp2 as
+    select      employee_id
+            ,   job_id
+            ,   last_name
+            ,   email
+            ,   hire_date
+            ,   salary
+            ,   department_id
+    FROM emp2
+    where department_id=60 with check option;
+    
+Select * from my_emp2;
+desc employees;
+
+Insert into my_emp2 values(1001, 'xJob', 'xName', 'xEmail', sysdate, 5000, 50);
+-- wird nicht funktionieren, weil dep 50 nicht im view zugelassen ist (check option)
+
+create or replace view my_emp2 as
+    select      employee_id
+            ,   job_id
+            ,   last_name
+            ,   email
+            ,   hire_date
+            ,   salary
+            ,   department_id
+    FROM emp2
+    where department_id=60 with check option;
+
+--###############################################################################################
+

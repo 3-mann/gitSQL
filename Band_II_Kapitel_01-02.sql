@@ -32,6 +32,8 @@ CREATE SEQUENCE s2
     MAXVALUE 100
     CYCLE
     NOCACHE; 
+    
+    
 
 select s1.nextval s1, s2.nextval s2 from dual;
 
@@ -145,4 +147,5 @@ analyze table big_table compute statistics;
 select * from big_table where object_name = 'EMPLOYEES';
 
 drop table big_table purge;
+
 
