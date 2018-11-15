@@ -124,3 +124,125 @@ create table ext_emp(
 ;
 
 select * from ext_emp;
+--################################################################################### 
+/*
+WITH 
+   dept_costs AS (
+      SELECT department_name, SUM(salary) dept_total
+         FROM employees e, departments d
+         WHERE e.department_id = d.department_id
+      GROUP BY department_name),
+   avg_cost AS (
+      SELECT SUM(dept_total)/COUNT(*) avg
+      FROM dept_costs)
+SELECT * FROM dept_costs
+   WHERE dept_total >
+      (SELECT avg FROM avg_cost)
+      ORDER BY department_name;
+*/
+--################################################################################### 
+
+with ref_ma as (
+    select e.manager_id ref_mng_id, e.department_id ref_dept_id 
+    from employees e, departments d where e.department_id = d.department_id
+)   SELECT * 
+    FROM ref_ma;   
+
+
+--###################################################################################
+
+WITH CNT_DEPT AS(
+    SELECT department_id,
+    COUNT(1) NUM_EMP                        --zählt die zeilen je deartment_id
+    FROM EMPLOYEES
+    GROUP BY department_id
+)   SELECT employee_id,
+    SALARY/NUM_EMP
+    FROM EMPLOYEES E
+    JOIN CNT_DEPT C
+    ON (e.department_id = c.department_id);
+
+--####################################################################################
+
+create table flights (
+      source varchar2(30)
+    , destination varchar(30)
+    , flight_time number(2,2)
+    , departure   number(2,2)    
+);
+
+INSERT INTO flights (source, destination, flight_time, departure) 
+VALUES ( 'NewYork', 'Boston', 2.15, 7.15);
+
+
+WITH Reachable_From (
+    Source, Destin, TotalFlightTime
+) 
+AS (  SELECT Source, Destin, Flight_time
+    FROM Flights
+    UNION ALL
+    SELECT incoming.Source, outgoing.Destin,
+    incoming.TotalFlightTime+outgoing.Flight_time
+    FROM Reachable_From incoming, Flights outgoing
+    WHERE incoming.Destin = outgoing.Source
+    )
+SELECT Source, Destin, TotalFlightTime
+FROM Reachable_From;
+
+
+--####################################################################################
+
+WITH    reports_to_101 (eid, emp_last, mgr_id, reportLevel) AS  (
+    SELECT employee_id, last_name, manager_id, 0 reportLevel
+    FROM employees
+    --WHERE employee_id = 101
+    UNION ALL
+    SELECT e.employee_id, e.last_name, e.manager_id, reportLevel+1
+    FROM reports_to_101 r, employees e
+    WHERE r.eid = e.manager_id
+)
+SELECT eid, emp_last, mgr_id, reportLevel
+FROM reports_to_101
+ORDER BY eid, reportLevel; 
+
+--####################################################################################
+
+SELECT employee_id, last_name, manager_id
+   FROM employees
+   CONNECT BY PRIOR employee_id = manager_id
+   order by employee_id;
+   
+   
+--####################################################################################
+
+INSERT INTO (SELECT l.location_id, l.city, l.country_id
+FROM locations l
+JOIN countries c
+ON(l.country_id = c.country_id)
+JOIN regions USING(region_id)
+WHERE region_name = 'Europe')
+VALUES (3300, 'Cardiff', 'UK');
+
+
+-- ##########  Dieses Beispiel funktioniert so nicht ##############################
+with ins_loc as SELECT l.location_id, l.city, l.country_id
+FROM locations l
+JOIN countries c
+ON(l.country_id = c.country_id)
+JOIN regions USING(region_id)
+WHERE region_name = 'Europe'
+insert into ins_loc
+VALUES (3301, 'Hogwarth', 'UK')
+values (3302; 'Brigthon', 'UK')
+;
+
+--#################################################################################
+
+select * from job_history;
+
+select * from employees;
+
+SELECT employee_id, last_name, manager_id, LEVEL
+   FROM employees
+   CONNECT BY PRIOR employee_id = manager_id;
+
