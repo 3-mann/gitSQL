@@ -1,0 +1,248 @@
+CREATE VIEW my_emp_view AS
+SELECT employee_id,
+       first_name || ' ' || last_name employee_name,
+       salary,
+       salary * 12 annual_salary,
+       department_id
+FROM   employees
+WHERE  department_id <> 90;
+
+DESC my_emp_view;
+
+SELECT * FROM my_emp_view;
+
+SELECT employee_name, annual_salary
+FROM   my_emp_view
+WHERE  annual_salary > 50000
+ORDER BY 2 DESC;
+
+CREATE OR REPLACE VIEW my_emp_view(emp_id, emp_name, salary, ann_salary, dep_id, dep_name) AS
+SELECT employee_id,
+       first_name || ' ' || last_name,
+       salary,
+       salary * 12,
+       --e.department_id,
+       department_id,
+       department_name
+-- FROM   employees e JOIN departments d ON (e.department_id = d.department_id)
+FROM employees join departments using(department_id)
+-- ACHTUNG: ein NATURAL JOIN würde hier zu fehlern führen, weil er auch die Manager_ID matchen würde.
+-- WHERE  e.department_id <> 90;
+WHERE  department_id <> 90
+
+select * from table(dbms_xplan.display_cursor(sql_id=>'null', format=>'ALLSTATS LAST'));
+;
+--###################################################################################################
+drop table emp2 purge;
+Create table emp2 as select * from employees;
+create or replace view my_emp2 as
+    select      employee_id
+            ,   job_id
+            ,   last_name
+            ,   email
+            ,   hire_date
+            ,   salary
+            ,   department_id
+    FROM emp2
+    where department_id=60 with check option;
+    
+Select * from my_emp2;
+desc employees;
+
+Insert into my_emp2 values(1001, 'xJob', 'xName', 'xEmail', sysdate, 5000, 50);
+
+--###################################################################################################
+
+drop table emp3 purge;
+Create table emp3 (
+        employee_id number(3)
+    ,   first_name  varchar2(30)
+    ,   last_name   varchar2(30)
+    ,   salary      number(10,2)
+    ,   email       varchar2(30)
+    ,   dept_id     number(3)   
+);
+
+alter table emp3 modify last_name not null;
+alter table emp3 modify employee_id constraint emp3_emp_id_pk primary key;
+alter table emp3 add constraint emp3_email_uk unique(email);
+alter table emp3 add constraint emp3_dep_id_fk 
+    foreign ky(dept_id) 
+    references departments(department_id);
+alter table emp3 add check(salary > 0 and dept_id is not null);
+
+
+
+
+create or replace view my_emp3 as
+    select      employee_id
+            ,   job_id
+            ,   last_name
+            ,   email
+            ,   hire_date
+            ,   salary
+            ,   department_id
+    FROM emp2
+    where department_id=60 with check option;
+
+alter table emp3 rename constraint SYS_C0010798 to emp3_lname_nn;
+alter table emp3 rename constraint SYS_C0010801 to emp3_sal_gt_0_dept_nn;
+
+alter table emp3 disable constraint emp3_sal_gt_0_dept_nn;
+alter table emp3 enable constraint emp3_sal_gt_0_dept_nn;   --kann nicht validiert werden
+alter table emp3 enable novalidate constraint emp3_sal_gt_0_dept_nn;   --wird onhe validierung ausgeführt
+
+commit;
+
+select * from emp3;
+
+select * from user_constraints where table_name = 'EMP3';
+
+insert into emp3 select employee_id, first_name, last_name, salary, email, department_id
+  FROM employees;
+  
+                       -- employee_id, first_name, last_name, salary, email, department_id
+insert into emp3 values(555,'Hugo','Müller',77000,'HMueller',110);
+
+  
+ SELECT employee_id, first_name, last_name, email, salary FROM employees; 
+ 
+ create directory ext_tab_dir as 'c:\ext_tab';
+ grant read, write on directory ext_tab_dir to public;
+
+create table ext_emp(
+        emp_id number
+    ,   fname varchar2(30)
+    ,   lname varchar2(30)
+    ,   email varchar2(30)
+    ,   salary number
+)   organization external (
+        type oracle_loader
+        default directory ext_tab_dir
+        location('emp.txt')
+    ) reject limit unlimited
+;
+
+select * from ext_emp;
+--################################################################################### 
+/*
+WITH 
+   dept_costs AS (
+      SELECT department_name, SUM(salary) dept_total
+         FROM employees e, departments d
+         WHERE e.department_id = d.department_id
+      GROUP BY department_name),
+   avg_cost AS (
+      SELECT SUM(dept_total)/COUNT(*) avg
+      FROM dept_costs)
+SELECT * FROM dept_costs
+   WHERE dept_total >
+      (SELECT avg FROM avg_cost)
+      ORDER BY department_name;
+*/
+--################################################################################### 
+
+with ref_ma as (
+    select e.manager_id ref_mng_id, e.department_id ref_dept_id 
+    from employees e, departments d where e.department_id = d.department_id
+)   SELECT * 
+    FROM ref_ma;   
+
+
+--###################################################################################
+
+WITH CNT_DEPT AS(
+    SELECT department_id,
+    COUNT(1) NUM_EMP                        --zählt die zeilen je deartment_id
+    FROM EMPLOYEES
+    GROUP BY department_id
+)   SELECT employee_id,
+    SALARY/NUM_EMP
+    FROM EMPLOYEES E
+    JOIN CNT_DEPT C
+    ON (e.department_id = c.department_id);
+
+--####################################################################################
+
+create table flights (
+      source varchar2(30)
+    , destination varchar(30)
+    , flight_time number(2,2)
+    , departure   number(2,2)    
+);
+
+INSERT INTO flights (source, destination, flight_time, departure) 
+VALUES ( 'NewYork', 'Boston', 2.15, 7.15);
+
+
+WITH Reachable_From (
+    Source, Destin, TotalFlightTime
+) 
+AS (  SELECT Source, Destin, Flight_time
+    FROM Flights
+    UNION ALL
+    SELECT incoming.Source, outgoing.Destin,
+    incoming.TotalFlightTime+outgoing.Flight_time
+    FROM Reachable_From incoming, Flights outgoing
+    WHERE incoming.Destin = outgoing.Source
+    )
+SELECT Source, Destin, TotalFlightTime
+FROM Reachable_From;
+
+
+--####################################################################################
+
+WITH    reports_to_101 (eid, emp_last, mgr_id, reportLevel) AS  (
+    SELECT employee_id, last_name, manager_id, 0 reportLevel
+    FROM employees
+    --WHERE employee_id = 101
+    UNION ALL
+    SELECT e.employee_id, e.last_name, e.manager_id, reportLevel+1
+    FROM reports_to_101 r, employees e
+    WHERE r.eid = e.manager_id
+)
+SELECT eid, emp_last, mgr_id, reportLevel
+FROM reports_to_101
+ORDER BY eid, reportLevel; 
+
+--####################################################################################
+
+SELECT employee_id, last_name, manager_id
+   FROM employees
+   CONNECT BY PRIOR employee_id = manager_id
+   order by employee_id;
+   
+   
+--####################################################################################
+
+INSERT INTO (SELECT l.location_id, l.city, l.country_id
+FROM locations l
+JOIN countries c
+ON(l.country_id = c.country_id)
+JOIN regions USING(region_id)
+WHERE region_name = 'Europe')
+VALUES (3300, 'Cardiff', 'UK');
+
+
+-- ##########  Dieses Beispiel funktioniert so nicht ##############################
+with ins_loc as SELECT l.location_id, l.city, l.country_id
+FROM locations l
+JOIN countries c
+ON(l.country_id = c.country_id)
+JOIN regions USING(region_id)
+WHERE region_name = 'Europe'
+insert into ins_loc
+VALUES (3301, 'Hogwarth', 'UK')
+values (3302; 'Brigthon', 'UK')
+;
+
+--#################################################################################
+
+select * from job_history;
+
+select * from employees;
+
+SELECT employee_id, last_name, manager_id, LEVEL
+   FROM employees
+   CONNECT BY PRIOR employee_id = manager_id;
+
