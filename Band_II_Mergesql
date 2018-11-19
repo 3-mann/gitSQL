@@ -1,0 +1,134 @@
+CREATE TABLE emp20 AS SELECT * FROM employees ;
+
+                    WHERE department_id=20 ;
+--###################
+UPDATE emp20 SET salary =10000 WHERE last_name='Hartstein' ;
+
+
+
+commit; 
+--###################
+UPDATE emp20 SET last_name='Schmidt' 
+
+WHERE last_name='Fay' ;
+
+commit; 
+--###################
+INSERT INTO emp20 (employee_id, first_name, last_name,email, hire_date, job_id, salary, department_id) 
+
+VALUES (501,'Petra','Becker','pbecker',sysdate,'SA_REP',4000,20) ; 
+--######################
+
+ 
+MERGE INTO employees e USING emp20 z
+ON (e.employee_id=z.employee_id)
+WHEN MATCHED THEN 
+UPDATE SET e.last_name=z.last_name ,
+           e.salary   =z.salary ,
+           e.email    =SUBSTR(z.first_name,1,1)||SUBSTR(z.last_name,1,7)
+Delete where (z.commission_pct is not null)           
+WHEN NOT MATCHED THEN
+INSERT (e.employee_id, e.last_name,e.first_name, e.salary, e.email, e.job_id, e.hire_date,e.department_id)
+VALUES (z.employee_id, z.last_name,z.first_name, z.salary, z.email, z.job_id, z.hire_date,z.department_id) 
+;
+
+rollback;
+--#######################
+
+SELECT
+    *
+FROM emp20;
+--#######################
+MERGE INTO emp20 c
+USING (SELECT * FROM EMPLOYEES ) e
+ON (c.employee_id = e.employee_id)
+WHEN MATCHED THEN
+UPDATE SET
+c.first_name = e.first_name,
+c.last_name = e.last_name,
+...
+DELETE WHERE (E.COMMISSION_PCT IS NOT NULL)
+WHEN NOT MATCHED THEN
+INSERT VALUES(e.employee_id, e.first_name, e.last_name,
+e.email, e.phone_number, e.hire_date, e.job_id,
+e.salary, e.commission_pct, e.manager_id,
+e.department_id);
+
+--###################################################################################
+TRUNCATE TABLE copy_emp3;
+SELECT * FROM copy_emp3;
+--drop table copy_emp3 purge;
+CREATE TABLE copy_emp3 as select * from employees;
+--###################
+MERGE INTO copy_emp3 c
+USING (SELECT * FROM EMPLOYEES ) e
+ON (c.employee_id = e.employee_id)
+WHEN MATCHED THEN
+UPDATE SET
+c.first_name        = e.first_name,
+c.last_name         = e.last_name,
+c.email             = e.email, 
+c.phone_number      = e.phone_number, 
+c.hire_date         = e.hire_date, 
+c.job_id            = e.job_id,
+c.salary            = e.salary, 
+c.commission_pct    = e.commission_pct, 
+c.manager_id        = e.manager_id,
+c.department_id    = e.department_id
+DELETE WHERE (E.COMMISSION_PCT IS NOT NULL)
+WHEN NOT MATCHED THEN
+INSERT VALUES(e.employee_id, e.first_name, e.last_name,
+e.email, e.phone_number, e.hire_date, e.job_id,
+e.salary, e.commission_pct, e.manager_id,
+e.department_id);
+
+select * from copy_emp3;
+--######################################################################
+drop table emp3;
+show recyclebin;
+
+--######################################################################
+CREATE OR REPLACE DIRECTORY load_dir AS 'C:\ext_Tab';
+drop table "EXT_exls";
+
+
+CREATE TABLE ORA1.EXT_xls (
+      "NAME"        VARCHAR2(30 BYTE)
+    , "VORNAME"     VARCHAR2(30 BYTE)
+    , "PLZ"         Number
+    , "Ort"         Varchar2(30)
+    , "Strasse"     Varchar2(30)
+    , "Email"       Varchar2(40)
+    , "Telefon"     Varchar2(30)
+    , "Datum"       Date
+    
+)
+ORGANIZATION EXTERNAL
+   (
+         TYPE oracle_loader
+         DEFAULT DIRECTORY load_dir
+         ACCESS PARAMETERS 
+         (
+               RECORDS DELIMITED BY NEWLINE
+               badfile load_dir:'xlsdb.bad'
+               logfile load_dir:'xlsdb.log'
+               FIELDS TERMINATED BY ','
+               MISSING FIELD VALUES ARE NULL
+               ( 
+                    NAME
+                    , VORNAME
+                    , PLZ
+                    , Ort
+                    , Strasse
+                    , Email
+                    , Telefon
+                    , Datum
+         ))
+             LOCATION ('xlsdb.xls')
+)REJECT LIMIT UNLIMITED;
+--######################################################################
+select * from ext_xls;
+select * from ext_emp;
+--######################################################################
+
+select current_time from dual;
