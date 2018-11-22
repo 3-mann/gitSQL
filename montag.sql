@@ -1,9 +1,8 @@
-HR on orcl> 
-HR on orcl> r
-  1  SELECT last_name, LENGTH(last_name), first_name, LENGTH(first_name),
-  2  NULLIF ( LENGTH(last_name),LENGTH(first_name))
-  3  FROM employees
-  4* WHERE department_id=20 
+--########COALESCE##########################################################
+  SELECT last_name, LENGTH(last_name), first_name, LENGTH(first_name),
+  NULLIF ( LENGTH(last_name),LENGTH(first_name))
+  FROM employees
+  WHERE department_id=20 ;
 
 LAST_NAME                 LENGTH(LAST_NAME) FIRST_NAME           LENGTH(FIRST_NAME)                                     
 ------------------------- ----------------- -------------------- ------------------                                     

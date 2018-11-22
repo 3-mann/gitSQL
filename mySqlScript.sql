@@ -1,3 +1,5 @@
+--############Create Table####ORA Online###########
+
 REM   Script: DReimann_Part_01
 REM   This code is just meant for repeating the lessons learned.
 
@@ -245,3 +247,4 @@ select e.name employee,
 from departments d, employees e 
 where d.deptno = e.deptno(+) 
 order by e.name;
+--##########End Create Table####################

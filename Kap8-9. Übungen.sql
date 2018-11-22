@@ -1,4 +1,4 @@
-
+--################# Kapitel 8 ####Select Sort   ###Manual Sort ###Intersect ###Minus ###
 ( SELECT
     "A3"."LAST_NAME"   "LAST_NAME"
     , "A3"."EMAIL"       "EMAIL"
