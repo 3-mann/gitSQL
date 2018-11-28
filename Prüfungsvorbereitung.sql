@@ -70,3 +70,83 @@ select department_id, job_id, count(*), sum(salary)
     from employees where department_id is not null
     group by grouping sets((department_id, job_id), manager_id)
     ;
+
+SELECT TO_DATE(NVL(SYSDATE-END_DATE,SYSDATE))FROM job_history;
+
+SELECT to_date(SYSDATE-END_DATE) FROM job_history; 
+
+SELECT NVL(TO_CHAR(MONTHS_BETWEEN(start_date,end_date)),'Ongoing') FROM job_history;
+--###################################################
+
+SELECT employee_id, NVL2(NULLIF(salary, salary), 0, 1000)"BONUS" FROM employees;
+SELECT employee_id, NVL2(NULLIF(salary, salary*2), 0, 1000)"BONUS" FROM employees;
+
+
+--###################################################
+SELECT employee_id, NVL2(hire_date-hire_date, hire_date + 15,'') FROM employees; 
+SELECT employee_id, NVL(hire_date-hire_date, hire_date + 15) FROM employees;
+--###################################################
+
+SELECT TO_CHAR(hire_date,'dd/month/YYYY'), hire_date, TO_DATE('01.jan.03'), TO_DATE('31.dez.06')	
+FROM employees WHERE hire_date between TO_DATE('01.jan.03') and  TO_DATE('31.dez.06');
+
+SELECT TO_CHAR(hire_date,'dd/month/YYYY'), hire_date, TO_DATE('01.jan.03'), TO_DATE('31.dez.06')	
+FROM employees WHERE hire_date >= TO_DATE('01.jan.03') and hire_date <=  TO_DATE('31.dez.06');
+--####################################################
+SELECT employee_id, DECODE(NULLIF(salary, 10000), NULL, salary*.25, 'N/A') "Catcost" FROM employees;
+SELECT employee_id, DECODE(salary, >10000, 'High', <10000, 'Low') "Range" FROM employees;
+
+--############ Ranking (für ORA21)##########  TODO: Verstehe ich nicht; nachfragen  ######
+SELECT RANK() OVER(ORDER BY salary DESC) rank, last_name, salary 
+FROM employees 
+ORDER BY salary DESC
+FETCH FIRST 11 ROWS WITH TIES; 
+
+--####################################################
+SELECT SUBSTR(hire_date,7) SubString
+     , SUM(DECODE(SUBSTR(hire_date,8),'04',1,0)) "2004"
+     , SUM(DECODE(SUBSTR(hire_date,8),'05',1,0)) "2005" 
+     FROM employees
+     Group by SUBSTR(hire_date,7);
+     
+SELECT SUM(DECODE(SUBSTR(promo_begin_date,7),'00',1,0)) "2000"
+     , SUM(DECODE(SUBSTR(promo_begin_date,7),'99',1,0)) "1999" FROM promotions;
+
+Select * from Promotions;
+     
+SELECT SUM(CASE TO_CHAR(promo_begin_date,'yy')      --  Vorsicht ! nicht 'YYYY'
+       WHEN '99' THEN 1 ELSE 0 END) "1999"
+      ,SUM(CASE TO_CHAR(promo_begin_date,'yyyy')    -- oder 4-stellig vergleichen
+      WHEN '2000' THEN 1 ELSE 0 END) "2000" 
+      FROM promotions;
+ 
+SELECT sum(CASE TO_CHAR(promo_begin_date,'yyyy') 
+    WHEN '1999' THEN 1 ELSE 0 END) "1999"
+    , sum(CASE TO_CHAR(promo_begin_date,'yyyy') 
+    WHEN '2000' THEN 1 ELSE 0 END) "2000" 
+    FROM promotions;
+
+
+SELECT sum(DECODE(TO_CHAR(promo_begin_date,'yyyy'), '1999', 1, 0)) "1999"
+     , sum(DECODE(TO_CHAR(promo_begin_date,'yyyy'),'2000', 1, 0)) "2000" 
+FROM promotions;
+
+--###############################################
+
+SELECT TO_CHAR(hire_date,'dd-mon-yyyy hh24:mi:ss'), TO_CHAR(salary,'$99999999D99') FROM employees  
+WHERE TO_char(hire_date,'hh24') < 12  
+AND COALESCE(salary,NULL) is not NULL;
+
+
+SELECT TO_CHAR(hire_date,'dd-mon-yyyy hh24:mi:ss'), NVL(TO_CHAR(salary,'$99999999D99'),0) 
+FROM employees 
+WHERE TO_CHAR(hire_date,'hh24') < 12;
+
+SELECT TO_CHAR(hire_date,'dd-mon-yyyy hh24:mi:ss'), COALESCE(TO_Char(salary,'$99999999.99'),0) 
+FROM employees 
+WHERE TO_DATE(hire_date,'hh24') < 12;
+
+Select coalesce(TO_Char(salary,'$99999999.99'),'0') test from employees;
+
+SELECT TO_DATE (trans_date,'dd-mon-yyyy hh24:mi:ss'), NVL2(trans_amt,TO_NUMBER(trans_amt,'$99999999.99'), 0) 
+FROM transactions WHERE TO_DATE(trans_date,'hh24') < 12;
