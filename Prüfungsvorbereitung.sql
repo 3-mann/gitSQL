@@ -35,7 +35,6 @@ WHERE TO_NUMBER(TO_DATE(trans_date,'hh24')) < 12 AND COALESCE(trans_amt,NULL)
 <>NULL
 
 
-
 SELECT TO_CHAR(hire_date,'dd-mon-yyyy hh24:mi:ss') d1--,   --###TODO:### noch nicht zu Ende gedacht ### 
 --NVL(TO_CHAR(hire_date,'$99999999D99'),0) d2
 FROM employees
@@ -53,4 +52,21 @@ JOIN customer c
   ON (s.cust_id = c.cust_id) AND time_id < '30-oct-2007'; 
   
   
+SELECT CONCAT(SUBSTR(INITCAP(last_name),1,3), REPLACE(hire_date,'-')) "USERID" FROM employees;
 
+
+select department_id, job_id, count(*), sum(salary)
+    from employees where department_id is not null
+    group by rollup(department_id, job_id)
+    order by 1,2;
+    
+
+select department_id, job_id, count(*), sum(salary)
+    from employees where department_id is not null
+    group by cube(department_id, job_id)
+    order by 1,2;
+    
+select department_id, job_id, count(*), sum(salary)
+    from employees where department_id is not null
+    group by grouping sets((department_id, job_id), manager_id)
+    ;
