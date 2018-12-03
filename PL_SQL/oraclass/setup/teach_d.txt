@@ -1,0 +1,56 @@
+
+  COUNT(*)
+----------
+         8
+
+1 row selected.
+
+
+  COUNT(*)
+----------
+       107
+
+1 row selected.
+
+
+  COUNT(*)
+----------
+        25
+
+1 row selected.
+
+
+  COUNT(*)
+----------
+         4
+
+1 row selected.
+
+
+  COUNT(*)
+----------
+        23
+
+1 row selected.
+
+
+  COUNT(*)
+----------
+        27
+
+1 row selected.
+
+
+  COUNT(*)
+----------
+        19
+
+1 row selected.
+
+
+  COUNT(*)
+----------
+        10
+
+1 row selected.
+
