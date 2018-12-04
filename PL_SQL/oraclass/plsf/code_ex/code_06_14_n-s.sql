@@ -1,3 +1,4 @@
+@C:\app\gitSQL\PL_SQL\login
 SET VERIFY OFF
 
 DROP TABLE retired_emps;
@@ -15,7 +16,7 @@ CREATE TABLE retired_emps
 /
 
 DECLARE
-  v_employee_number number:= 124;
+  v_employee_number number:= 125;
   v_emp_rec   employees%ROWTYPE;
 BEGIN
  SELECT * INTO v_emp_rec FROM employees
