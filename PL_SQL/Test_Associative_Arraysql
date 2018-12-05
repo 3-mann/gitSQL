@@ -1,0 +1,293 @@
+DECLARE 
+  TYPE dept_table_type IS TABLE OF  
+       departments%ROWTYPE INDEX BY PLS_INTEGER; 
+  v_dept_table dept_table_type; 
+  -- Each element of dept_table is a record  
+Begin 
+  SELECT * INTO v_dept_table(1) FROM departments 
+    WHERE department_id = 10; 
+  DBMS_OUTPUT.PUT_LINE(v_dept_table(1).department_id ||' '|| 
+   v_dept_table(1).department_name ||' ' || 
+   v_dept_table(1).manager_id); 
+END; 
+
+--########################################################################
+
+DECLARE 
+   TYPE emp_table_type IS TABLE OF 
+      employees%ROWTYPE INDEX BY PLS_INTEGER; 
+   my_emp_table  emp_table_type; 
+   max_count         NUMBER(3):= 104;  
+BEGIN 
+  FOR i IN 100..max_count 
+  LOOP 
+   SELECT * INTO my_emp_table(i) FROM employees 
+   WHERE employee_id = i; 
+  END LOOP; 
+  FOR i IN my_emp_table.FIRST..my_emp_table.LAST  
+  LOOP 
+     DBMS_OUTPUT.PUT_LINE(my_emp_table(i).last_name); 
+  END LOOP; 
+END; 
+
+--########################################################################
+
+DECLARE 
+   TYPE emp_table_type IS TABLE OF 
+      employees%ROWTYPE INDEX BY PLS_INTEGER; 
+   my_emp_table  emp_table_type; 
+   max_count         NUMBER(3):= 104;  
+BEGIN 
+  FOR i IN 100..max_count 
+  LOOP 
+   SELECT * INTO my_emp_table(i) FROM employees 
+   WHERE employee_id = i; 
+  END LOOP; 
+  FOR i IN my_emp_table.FIRST..my_emp_table.LAST  
+  LOOP 
+     DBMS_OUTPUT.PUT_LINE(my_emp_table(i).last_name); 
+  END LOOP; 
+END;  
+
+--########################################################################
+
+DECLARE
+
+  TYPE pltab_typ is TABLE OF VARCHAR2(20) 
+
+    INDEX BY PLS_INTEGER;
+
+  dem_tab pltab_typ;
+
+BEGIN
+  dem_tab(9) := 'NINE';
+  dem_tab(4) := 'FOUR';
+  dem_tab(6) := 'SIX';
+  dem_tab(14) := 'FOURTEEN';
+  dem_tab(100) := 'HUNDRED';
+  FOR i IN dem_tab.FIRST..dem_tab.LAST LOOP
+    IF  dem_tab.EXISTS(i) THEN
+      DBMS_OUTPUT.PUT_LINE('achte auf die reihenfolge: '||dem_tab(i));
+    END IF;
+  END LOOP;
+END;
+
+--########################################################################
+
+SET SERVEROUTPUT ON
+
+DECLARE 
+    TYPE emp_table_type IS TABLE OF 
+        employees%ROWTYPE INDEX BY PLS_INTEGER; 
+    my_emp_table  emp_table_type; 
+    v_min_empno employees.employee_id%TYPE;
+    v_max_empno employees.employee_id%TYPE;
+    v_temp_rec employees%ROWTYPE ;
+BEGIN 
+SELECT * INTO v_temp_rec   FROM employees  WHERE employee_id=i ; 
+        v_temp_rec.first_name :='Klaus' ;
+        my_emp_table(i) :=v_temp_rec ;
+    FOR i IN my_emp_table.FIRST..my_emp_table.LAST  LOOP 
+    IF my_emp_table.EXISTS(i) THEN
+        DBMS_OUTPUT.PUT_LINE(my_emp_table(i).last_name||' '||my_emp_table(i).first_name); 
+        UPDATE employees  SET ROW=my_emp_table(i) WHERE employee_id=my_emp_table(i).employee_id;
+    END IF  ;
+    END LOOP; 
+END;  
+
+--#######################################################################
+
+SET SERVEROUTPUT ON
+
+DECLARE 
+    TYPE emp_table_type IS TABLE OF 
+        employees%ROWTYPE INDEX BY PLS_INTEGER; 
+    my_emp_table  emp_table_type; 
+    v_min_empno employees.employee_id%TYPE;
+    v_max_empno employees.employee_id%TYPE;
+BEGIN 
+SELECT * INTO my_emp_table  FROM employees ; 
+    FOR i IN my_emp_table.FIRST..my_emp_table.LAST  
+    LOOP 
+        IF my_emp_table.EXISTS(i) THEN
+            DBMS_OUTPUT.PUT_LINE(my_emp_table(i).last_name||' '||my_emp_table(i).first_name);
+            if my_emp_table(i).last_name = 'Hartstein' then 
+               my_emp_table(i).first_name :='Klaus' ;
+               DBMS_OUTPUT.PUT_LINE(my_emp_table(i).last_name||' '||my_emp_table(i).first_name);
+            end if ;
+            UPDATE employees  SET ROW=my_emp_table(i) WHERE employee_id=i ;
+        END IF ;
+    END LOOP; 
+END;  
+
+--#######################################################################
+
+SET SERVEROUTPUT ON
+
+DECLARE 
+    TYPE emp_table_type IS TABLE OF 
+        employees%ROWTYPE INDEX BY PLS_INTEGER; 
+    my_emp_table  emp_table_type; 
+    --max_count         NUMBER(3):= 104; 
+    v_min_empno employees.employee_id%TYPE;
+    v_max_empno employees.employee_id%TYPE;
+    v_klaus employees%ROWTYPE ;
+BEGIN 
+    SELECT MIN(employee_id), MAX(employee_id) INTO v_min_empno, v_max_empno FROM employees
+        WHERE employee_id <104 ;
+    FOR i IN v_min_empno..v_max_empno 
+    LOOP 
+        SELECT * INTO my_emp_table(i) FROM employees 
+        WHERE employee_id = i; 
+    END LOOP; 
+    SELECT * INTO v_klaus FROM employees WHERE employee_id=201 ; 
+    v_klaus.first_name :='Klaus' ;
+    my_emp_table(110) :=v_klaus ;
+    --UPDATE employees  SET ROW=my_emp_table(110) WHERE employee_id=110 ;
+    FOR i IN my_emp_table.FIRST..my_emp_table.LAST  LOOP 
+        IF my_emp_table.EXISTS(i) THEN
+            DBMS_OUTPUT.PUT_LINE(my_emp_table(i).last_name||' '||my_emp_table(i).first_name); 
+            IF i BETWEEN 100 AND 104 THEN
+                UPDATE employees  SET ROW=my_emp_table(i) WHERE employee_id=i ;
+            ELSE 
+                UPDATE employees  SET ROW=my_emp_table(i) WHERE employee_id=201 ;
+            END IF  ;
+        END IF ;
+    END LOOP; 
+END; 
+
+--########################################################################
+
+DECLARE
+TYPE name_table IS TABLE OF VARCHAR2(100) INDEX BY BINARY_INTEGER;
+new_name name_table;
+BEGIN
+new_name(32):='MEIER';
+new_name(33):='MAYER';
+DBMS_OUTPUT.PUT_LINE(new_name(32));
+DBMS_OUTPUT.PUT_LINE(new_name(33)) ;
+ --löschen aus der Tabelle;
+new_name.DELETE ;
+DBMS_OUTPUT.PUT_LINE(new_name(32));
+DBMS_OUTPUT.PUT_LINE(new_name(33));
+END;
+
+--#######################################################################
+
+DECLARE
+TYPE name_table IS TABLE OF VARCHAR2(100) INDEX BY BINARY_INTEGER;
+empty_name name_table;
+new_name name_table;
+BEGIN
+new_name(32):='MEIER';
+new_name(33):='MAYER';
+DBMS_OUTPUT.PUT_LINE(new_name(32));
+DBMS_OUTPUT.PUT_LINE(new_name(33));
+new_name:=empty_name;     --zuweisen der leeren tabelle an die gefüllte tabelle
+DBMS_OUTPUT.PUT_LINE(new_name(32));
+DBMS_OUTPUT.PUT_LINE(new_name(33));
+END;
+
+--########################################################################
+
+DECLARE
+TYPE dept_table_type
+IS
+TABLE OF departments%ROWTYPE INDEX BY VARCHAR2(20);
+dept_table dept_table_type;
+-- Each element of dept_table is a record
+BEGIN
+SELECT * INTO dept_table(1) FROM departments
+WHERE department_id = 10;
+DBMS_OUTPUT.PUT_LINE(dept_table(1).department_id ||' '||
+dept_table(1).department_name ||' '||
+dept_table(1).manager_id);
+END; 
+
+--#########################################################################
+
+DECLARE
+TYPE dept_table_type
+IS
+TABLE OF departments%ROWTYPE INDEX BY VARCHAR2(20);
+dept_table dept_table_type;
+v_dname departments.department_name%TYPE ;
+-- Each element of dept_table is a record
+BEGIN
+SELECT department_name INTO v_dname FROM departments WHERE department_id=10 ;
+SELECT * INTO dept_table(v_dname) FROM departments
+WHERE department_id = 10;
+DBMS_OUTPUT.PUT_LINE(dept_table(v_dname).department_id ||' '||
+dept_table(v_dname).department_name ||' '||
+dept_table(v_dname).manager_id);
+END;
+
+--#########################################################################
+
+-- UE alle employees die in einem dept arbeiten über Schleife einliest
+-- und als Index verwendet in Verkettung mit ihrem deptno (LOOP)  
+DECLARE
+TYPE dept_table_type
+IS
+TABLE OF departments%ROWTYPE INDEX BY VARCHAR2(20);
+dept_table dept_table_type;
+v_dname departments.department_name%TYPE ;
+-- Each element of dept_table is a record
+BEGIN
+SELECT department_name INTO v_dname FROM departments WHERE department_id=10 ;
+SELECT * INTO dept_table(v_dname) FROM departments
+WHERE department_id = 10;
+DBMS_OUTPUT.PUT_LINE(dept_table(v_dname).department_id ||' '||
+dept_table(v_dname).department_name ||' '||
+dept_table(v_dname).manager_id);
+END;
+
+--#########################################################################
+
+DECLARE
+    TYPE location_type IS TABLE OF locations.city%TYPE;
+    v_offices location_type;
+BEGIN
+    v_offices :=location_type('BERLIN','HAMBURG','BREMEN','MEPPEN','STUTTGART');
+    FOR i IN  1..v_offices.count() LOOP
+        CONTINUE WHEN i=3 ;
+        DBMS_OUTPUT.PUT_LINE(v_offices(i));
+    END LOOP;
+END;
+
+--##########################################################################
+
+CREATE OR REPLACE TYPE my_tab_t AS TABLE OF VARCHAR2(30);
+
+CREATE TABLE nested_table (id NUMBER, col1 my_tab_t)
+       NESTED TABLE col1 STORE AS col1_tab; 
+
+--##########################################################################
+
+DECLARE
+    TYPE at_most_twelve_t IS
+        VARRAY (12) OF VARCHAR2 (100);
+    l_months   at_most_twelve_t  := at_most_twelve_t (
+          'January'
+        , 'February'
+        , 'April'
+        , 'May'
+        , 'June'
+        , 'July'
+        , 'August'
+        , 'September'
+        , 'October'
+        , 'November'
+        , 'December'
+        );
+BEGIN
+   l_months.extend;
+   l_months(5) := 'Extra-ember';
+END;
+
+
+--########################################################################
+--########################################################################
+--########################################################################
+--########################################################################
+--########################################################################
