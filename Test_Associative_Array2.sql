@@ -121,15 +121,20 @@ BEGIN
     END LOOP;
 END;
 --####################################################################################
-
+SET SERVEROUTPUT ON;
 DECLARE 
     TYPE dept_table_type IS TABLE OF departments%ROWTYPE 
     INDEX BY PLS_INTEGER ;
     v_dept_table   dept_table_type ;
     v_max_deptno   departments.department_id%TYPE ;
+    
+    TYPE loc_table_type IS TABLE OF locations%ROWTYPE 
+    INDEX BY PLS_INTEGER ;
+    v_loc_table   loc_table_type ;
+    v_max_locno   locations.location_id%TYPE ;
 BEGIN 
-    SELECT MAX(department_id)/10  INTO v_max_deptno 
-    FROM departments ;
+    SELECT MAX(department_id)/10  INTO v_max_deptno FROM departments ;
+    SELECT MAX(location_id)/100  INTO v_max_locno   FROM locations ;
     FOR i IN 1..v_max_deptno LOOP
         SELECT * INTO v_dept_table(i) 
         FROM departments 
@@ -138,6 +143,82 @@ BEGIN
             ||' '||i*10||' '
             || v_dept_table(i).location_id );
     END LOOP ;
+    for j in 10..v_max_locno loop
+        SELECT * INTO v_loc_table(j) 
+        FROM locations 
+        WHERE location_id=j*100 ;
+        DBMS_OUTPUT.PUT_LINE(v_loc_table(j).city
+            ||' '||j*100||' '
+            || v_loc_table(j).city );
+        end loop;    
 END ;
 
 --####################################################################################
+
+SET SERVEROUTPUT ON;
+DECLARE 
+    TYPE dept_table_type IS TABLE OF departments%ROWTYPE 
+    INDEX BY PLS_INTEGER ;
+    v_dept_table   dept_table_type ;
+    v_max_deptno   departments.department_id%TYPE ;
+    
+    TYPE loc_table_type IS TABLE OF locations%ROWTYPE 
+    INDEX BY PLS_INTEGER ;
+    v_loc_table   loc_table_type ;
+    v_max_locno   locations.location_id%TYPE ;
+BEGIN 
+    SELECT MAX(department_id)/10  INTO v_max_deptno FROM departments ;
+    SELECT MAX(location_id)/100  INTO v_max_locno   FROM locations ;
+    FOR i IN 1..v_max_deptno LOOP
+        SELECT * INTO v_dept_table(i) 
+        FROM departments 
+        WHERE department_id=i*10 ;
+        SELECT * INTO v_loc_table(i) 
+        FROM locations 
+        WHERE location_id=v_dept_table(i).location_id ;
+        DBMS_OUTPUT.PUT_LINE(v_dept_table(i).department_name
+            ||' '||i*10||' '
+            || v_loc_table(i).city ||' '
+            || v_loc_table(i).location_id );
+    END LOOP ;    
+END ;
+
+--####################################################################################
+
+SET SERVEROUTPUT ON;
+DECLARE 
+    TYPE dept_table_type IS TABLE OF departments%ROWTYPE 
+    INDEX BY PLS_INTEGER ;
+    v_dept_table   dept_table_type ;
+    v_max_deptno   departments.department_id%TYPE ;
+    
+    TYPE loc_table_type IS TABLE OF locations%ROWTYPE 
+    INDEX BY PLS_INTEGER ;
+    v_loc_table   loc_table_type ;
+    v_max_locno   locations.location_id%TYPE ;
+BEGIN 
+    SELECT MAX(department_id)/10  INTO v_max_deptno FROM departments ;
+    SELECT MAX(location_id)/100  INTO v_max_locno   FROM locations ;
+
+    for j in 10..v_max_locno loop
+        SELECT * INTO v_loc_table(j) 
+        FROM locations 
+        WHERE location_id=j*100 ;
+    END LOOP ;    
+        
+    FOR i IN 1..v_max_deptno LOOP
+        SELECT * INTO v_dept_table(i) 
+        FROM departments 
+        WHERE department_id=i*10 ; 
+        
+            DBMS_OUTPUT.PUT_LINE(v_dept_table(i).department_name
+            ||' '||i*10||' '
+            || v_dept_table(i).location_id ||' '
+            || v_loc_table(v_dept_table(i).location_id/100).city );   
+        end loop;    
+END ;
+
+--####################################################################################
+
+--####################################################################################
+
