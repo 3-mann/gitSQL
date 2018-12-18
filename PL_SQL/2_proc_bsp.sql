@@ -33,3 +33,15 @@ END ;
 var b_ename VARCHAR2(20) 
 exec zwei(:b_2,:b_ename) 
 print b_2 b_ename ;
+/
+--###################################### Testaufgabe #########################
+select first_name, avg(salary), min(salary) from employees
+--having avg(salary) > min(salary) 
+group by first_name
+having avg(salary) < min(salary)
+;
+--###################################### Testaufgabe #########################
+
+select trunc(round(156.00,-1),-1) from dual;
+select trunc(156.00,-1) from dual;
+
