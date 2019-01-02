@@ -138,7 +138,6 @@ FOR x in c1  LOOP
  update employees set sal = 1500 where ename ='MILLER';
  Select ename,COALESCE(0.9*list_price, min_price, 5),nullif(cryptosp,cryptonew) from employees;
 --##########################################################################
-
 DECLARE 
     cursor c1 IS
     select empno, ename, sal, hiredate,crypto_aktuell, cryptosp 
