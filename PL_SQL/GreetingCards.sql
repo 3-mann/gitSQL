@@ -72,11 +72,8 @@ select * from holidays where holiday_date - sysdate < 10;
 --###########################################################################
 CREATE OR REPLACE TRIGGER trigger_greetings_file
   AFTER LOGON
-  ON DATABASE
-  BEGIN
+  ON SCHEMA
     CALL write_greetings
-  END
-
 /
 
 --###### Define scheduled Job for Greetings_file #############################

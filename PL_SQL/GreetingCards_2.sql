@@ -29,17 +29,19 @@ INSERT INTO holidays VALUES (sequence_greetings.NEXTVAL, TO_DATE('15.08.2019'), 
 INSERT INTO holidays VALUES (sequence_greetings.NEXTVAL, TO_DATE('24.12.2019'), 'Weihnachten');
 COMMIT;
 / 
+
+Select * from HOLIDAYs;
+
 CREATE DIRECTORY greeting_dir AS 'C:\app\gitSQL\greetings';
 GRANT READ, WRITE ON DIRECTORY greeting_dir TO public;
 /
 CREATE OR REPLACE PROCEDURE write_greetings IS
   f UTL_FILE.FILE_TYPE;
-  
   TYPE greet_emps_type IS TABLE OF employees%ROWTYPE;
   greetings_table greet_emps_type;
   
-  v_holiday holidays.holiday_name%TYPE := 'Feiertag';
-  v_out_dir VARCHAR2(36) := 'greeting_dir';
+  v_holiday holidays.holiday_name%TYPE := 'Platzhalter';
+  v_out_dir VARCHAR2(30) := 'greeting_dir';
   v_file VARCHAR2(12) := 'greetings_file.csv';
   
 BEGIN
@@ -83,10 +85,10 @@ CREATE OR REPLACE TRIGGER trigger_greetings_file
 
 execute DBMS_SCHEDULER.CREATE_JOB (job_name => 'greetings_job', 
           job_type => 'PLSQL_BLOCK', 
-          job_action => Print('Dear Admin, this Message is for You'), 
+          job_action => hier muss der auszuführende PL/SQL CODE stehen, 
           start_date => SYSDATE,
           repeat_interval => 'FREQ = DAILY; INTERVAL = 1',
-          auto_drop => FALSE, -- Default ist TRUE
-          enabled => TRUE)    -- Default ist FALSE
+          auto_drop => FALSE,
+          enabled => TRUE)  
 /
 --###### End of Schedule Definition ##########################################
