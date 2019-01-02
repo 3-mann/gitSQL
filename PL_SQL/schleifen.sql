@@ -259,7 +259,169 @@ FROM departments WHERE department_id=10 ;
 DBMS_OUTPUT.PUT_LINE(v_my_emp.v_sal3||' '|| v_my_emp.v_department.department_name) ;
 END ;
 /
-
-
+--################################################################################
+--1..10 ohne 7,9
+DECLARE 
+v_monat varchar(20) :='';
+BEGIN
+DBMS_OUTPUT.PUT_LINE('Ausgabe gültiger Monate') ;
+DBMS_OUTPUT.PUT_LINE('_____________________________') ;
+FOR i IN 1..12 LOOP 
+--CONTINUE WHEN i IN (7,9) ;
+select to_char(ADD_MONTHS(sysdate,i-1),'Month') into v_monat from dual;
+DBMS_OUTPUT.PUT_LINE(to_char(i,'00')||' - '|| v_monat) ;
+END LOOP ;
 END ;
+/
+--################################################################################
+select to_date('01-Jan-2030') - sysdate from dual;
+--################################################################################
+select * from employees where salary > 10.000;
 
+--################################################################################
+
+SET SERVEROUTPUT ON
+
+DECLARE
+   v_today DATE:=SYSDATE;
+   v_tomorrow v_today%TYPE;
+BEGIN
+   v_tomorrow:=v_today +1;
+   DBMS_OUTPUT.PUT_LINE(' Hello World ');
+   DBMS_OUTPUT.PUT_LINE('TODAY IS : '|| v_today);
+   DBMS_OUTPUT.PUT_LINE('TOMORROW IS : ' || v_tomorrow);
+END;
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+VARIABLE b_basic_percent NUMBER
+VARIABLE b_pf_percent NUMBER
+DECLARE
+   v_today DATE:=SYSDATE;
+   v_tomorrow v_today%TYPE;
+BEGIN
+   :b_basic_percent:=45;
+   :b_pf_percent:=12;
+
+   v_tomorrow:=v_today +1;
+   DBMS_OUTPUT.PUT_LINE(' Hello World ');
+   DBMS_OUTPUT.PUT_LINE('TODAY IS : '|| v_today);
+   DBMS_OUTPUT.PUT_LINE('TOMORROW IS : ' || v_tomorrow);
+END;
+/
+PRINT b_basic_percent;
+PRINT b_pf_percent;
+/
+
+-- You can use a single PRINT command without any parameters to print all 
+-- bind variables.
+--################################################################################
+
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+SET SERVEROUTPUT ON
+
+DECLARE
+   v_today DATE:=SYSDATE;   v_tomorrow v_today%TYPE;
+   v_fname VARCHAR2(15);
+   v_emp_sal NUMBER(10);
+BEGIN
+   v_tomorrow:=v_today +1;
+   SELECT first_name, salary INTO v_fname, v_emp_sal
+     FROM employees WHERE employee_id=110;
+   DBMS_OUTPUT.PUT_LINE(' Hello '|| v_fname);
+   DBMS_OUTPUT.PUT_LINE('YOUR SALARY IS : '||v_emp_sal);
+   DBMS_OUTPUT.PUT_LINE('YOUR CONTRIBUTION TOWARDS PF: '||v_emp_sal*v_basic_percent/100*v_pf_percent/100);
+END;
+/
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+SET SERVEROUTPUT ON
+
+DECLARE
+   v_dept_name departments.department_name%TYPE:= 'Education';
+   v_dept_id NUMBER;
+   v_max_deptno	NUMBER;
+BEGIN
+   SELECT MAX(department_id)  INTO v_max_deptno  FROM departments;
+   DBMS_OUTPUT.PUT_LINE('The maximum department_id is : ' ||       
+   v_max_deptno);
+   v_dept_id := 10 + v_max_deptno;
+   INSERT INTO departments (department_id, department_name, location_id) 
+   VALUES (v_dept_id,v_dept_name, NULL);
+   DBMS_OUTPUT.PUT_LINE (' SQL%ROWCOUNT gives ' || SQL%ROWCOUNT);
+ END;
+/
+SELECT * FROM  departments  WHERE  department_id=280;
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
+--################################################################################
+set SERVEROUTPUT ON;
+--ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YYYY';
+
+--################################################################################
