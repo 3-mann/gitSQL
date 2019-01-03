@@ -29,11 +29,11 @@ INSERT INTO holidays VALUES (sequence_greetings.NEXTVAL, TO_DATE('15.08.2019'), 
 INSERT INTO holidays VALUES (sequence_greetings.NEXTVAL, TO_DATE('24.12.2019'), 'Weihnachten');
 COMMIT;
 / 
-CREATE DIRECTORY greeting_dir AS 'C:\app\gitSQL\greetings';
+CREATE OR REPLACE DIRECTORY greeting_dir AS 'C:\app\gitSQL\greetings';
 GRANT READ, WRITE ON DIRECTORY greeting_dir TO public;
 /
 CREATE OR REPLACE PROCEDURE write_greetings IS
-  f UTL_FILE.FILE_TYPE;
+  file_ID UTL_FILE.FILE_TYPE;
   
   TYPE greet_emps_type IS TABLE OF employees%ROWTYPE;
   greetings_table greet_emps_type;
@@ -45,23 +45,22 @@ CREATE OR REPLACE PROCEDURE write_greetings IS
 BEGIN
   SELECT holiday_name INTO v_holiday
     FROM holidays WHERE holiday_date - sysdate < 10;
-  f := UTL_FILE.FOPEN(v_out_dir, v_file,'W');
-  UTL_FILE.PUT_LINE(f, 'Dear Employees for Tomorrow, ' || TO_DATE(SYSDATE+1) ||
+  file_ID := UTL_FILE.FOPEN(v_out_dir, v_file,'W');
+  UTL_FILE.PUT_LINE(file_ID, 'Dear Employees for Tomorrow, ' || TO_DATE(SYSDATE+1) ||
                         ', We Are Happy to Announce: ');
-  UTL_FILE.NEW_LINE(f);
+  UTL_FILE.NEW_LINE(file_ID);
   DBMS_OUTPUT.PUT_LINE('Hello!');
   SELECT * BULK COLLECT INTO greetings_table
     FROM employees;
---  FOR i IN 1..greetings_table.COUNT
   FOR i IN greetings_table.FIRST..greetings_table.LAST
   LOOP
-    UTL_FILE.PUT_LINE(f, 'Liebe(r) ' || greetings_table(i).first_name || ' ' ||
+    UTL_FILE.PUT_LINE(file_ID, 'Liebe(r) ' || greetings_table(i).first_name || ' ' ||
                                     greetings_table(i).last_name ||
                          ' we wish you a happy ' || v_holiday || '!');
   END LOOP;
-  UTL_FILE.NEW_LINE(f);
-  UTL_FILE.PUT_LINE(f, '*** END OF REPORT ***');
-  UTL_FILE.FCLOSE(f);
+  UTL_FILE.NEW_LINE(file_ID);
+  UTL_FILE.PUT_LINE(file_ID, '*** END OF REPORT ***');
+  UTL_FILE.FCLOSE(file_ID);
 END;
 /
 --###########################################################################
