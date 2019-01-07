@@ -125,6 +125,7 @@ create or replace PROCEDURE write_greetings IS
   greetings_table temp_table_type;						-- creating a virtual table based on that type-variable
 
   temp_holiday holidays.holiday_name%TYPE := 'Platzhalter';   --
+  temp_file holidays.holiday_name%TYPE := 'Platzhalter';   --
   temp_date    holidays.holiday_date%TYPE := to_date(sysdate + 7);
   v_output_dir VARCHAR2(50) := 'GREETING_DIR';
 
@@ -138,7 +139,8 @@ BEGIN
         FROM holidays 
         WHERE temp_holiday like holiday_name    -- check, whether or not a holiday is raising
         ;
-    file_ID := UTL_FILE.FOPEN(v_output_dir, temp_holiday||'.csv','W');   -- create File using Holiday_Name
+    temp_file := REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(temp_holiday,'ß','ss'),'ü','ue'),'ö','oe'),' ','_'),'ä','ae');
+    file_ID := UTL_FILE.FOPEN(v_output_dir, temp_file||'.csv','W');   -- create File using Holiday_Name
     UTL_FILE.PUT_LINE(file_ID, 'Liebe(r) Mitabeiter(in), am '||temp_date||'ist '||temp_holiday);
     UTL_FILE.NEW_LINE(file_ID);
     IF to_char(to_date(temp_date),'DY') = 'Sun' then
@@ -162,7 +164,7 @@ BEGIN
         UTL_FILE.NEW_LINE(file_ID);
         UTL_FILE.PUT_LINE(file_ID,'Auf ein Wiedersehen in alter Frische freut sich Ihr Hugo Habicht.');
         UTL_FILE.NEW_LINE(file_ID);
-        UTL_FILE.PUT_LINE(file_ID,';$');
+        UTL_FILE.PUT_LINE(file_ID,'; $');
         UTL_FILE.NEW_LINE(file_ID);
     END LOOP;
     UTL_FILE.FCLOSE(file_ID);
@@ -212,6 +214,33 @@ END;
 END;
 
 --######______________________________________________________######
+
+CREATE OR REPLACE FUNCTION replace_umlaut
+(p_umlaut VARCHAR2)
+RETURN VARCHAR2
+IS 
+BEGIN 
+IF p_umlaut='ä' THEN RETURN 'ae' ;
+ELSIF p_umlaut='ö' THEN RETURN 'oe' ;
+ELSIF p_umlaut='ü' THEN RETURN 'ue' ;
+ELSE RETURN p_umlaut ;
+END IF ;
+END ;
+--######______________________________________________________######
+
+--###########################################################
+
+CREATE OR REPLACE FUNCTION replace_umlaut
+(p_umlaut VARCHAR2)
+RETURN VARCHAR2
+IS 
+BEGIN 
+RETURN REPLACE(replace(replace(replace(replace(p_umlaut,'ß','ss'),'ü','ue'),'ö','oe'),'Ä','AE'),'ä','ae') ;
+END ;
+/
+
+--######______________________________________________________######
+
 
 --###### Sample of operated Outout-File #############################
 Liebe(r) Mitabeiter(in), am 06.01.19ist Heilige Drei Könige

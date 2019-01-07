@@ -17,16 +17,10 @@ INSERT INTO holidays (
     'offen',
     'Alle Bundesländer'
 );
-Commit
-;
-
-/*
-values(sequence_greetings.nextval, to_date('01.01.2019'),'Tue','Neujahr','fix','ges','abgerufen','Alle Bundesländer');
-*/
-
-COMMIT;
-        --     Status: Done    
+Commit;
+    
 Select * from HOLIDAYs order by holiday_date;      
-        --     Status: Insert successful
 
-delete from holidays where holiday_date = '14-jan-2019';
+Update holidays set holiday_status = 'offen' where holiday_date = '10-jan-2019';
+
+delete from holidays where holiday_date = '06-jan-2019';
